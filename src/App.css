@@ -1,0 +1,125 @@
+:root {
+
+  /* Colors: start*/
+
+  /* #FA7400
+    color: 
+      sign btn &
+      Home nav item &
+      contacts icons "FOOTER => CONTACTS section";
+    background:
+      scroll btn in bottom of hero &
+      mobile "active nav item in FEATURED CATEGORIES" &
+      slider btns "move right and left in FEATURED PRODUCTS" &
+      more info btn:hover "FEATURED PRODUCTS => products cards => bottom => under of price" &
+      Start Shopping btn:hover "Sales bar after FEATURED PRODUCTS";
+  */
+  --main-color: #FA7400;
+
+
+  /* #FF4F0416
+    background:
+      price label "TRENDING THIS WEEK => products cards" ;
+    
+  */
+  --secondary-color-1: #FF4F0416;
+
+  /* #FF4F04
+    color:
+      price label "TRENDING THIS WEEK => products lists" &
+  */
+  --secondary-color-2: #FF4F04;
+
+
+  /* #FA740073
+    color: 
+      SALE "FEATURED CATEGORIES => right section => top - left => (SALE -50%)" &
+
+  */
+  --secondary-color-3: #FA740073;
+
+  /* #0EA965
+    color: 
+      Price Label "FEATURED CATEGORIES => products cards" &
+
+  */
+  --main-price-color: #0EA965;
+
+  /* #AFAFAF
+    color: 
+      Shopping Cart Icon "FEATURED CATEGORIES =>  products cards => bottom => right" &
+      Rating Label "FEATURED CATEGORIES =>  products cards => bottom => after rating stars" &
+  */
+  --secondary-color-4: #AFAFAF;
+
+
+  /* #999999 
+    background:
+      Start Shopping btn "HERO" &
+    border: 
+      View More btn "FEATURED PRODUCTS =>  bottom after products slider" &
+      View More Laptops btn "FEATURED CATEGORIES =>  bottom after products list";
+  */
+  --secondary-color-6: #999999;
+
+  /* #E9E2E28F 
+    background: 
+      View More btn "FEATURED PRODUCTS =>  bottom after products slider" &
+      View More Laptops btn "FEATURED CATEGORIES =>  bottom after products list" &
+  */
+  --secondary-color-7: #E9E2E28F;
+
+  /* #F9F8F8 
+    background:
+      Products Cards "FEATURED CATEGORIES" &
+      Products Images containers "TRENDING THIS WEEK";
+  */
+  --secondary-color-8: #F9F8F8;
+
+  /* #575252
+    border:
+      Products Images containers "TRENDING THIS WEEK";
+  */
+  --secondary-color-9: #575252;
+
+
+  /* 
+    Start Shopping btn "HERO && SALES BAR"
+    Search Icon "Header => Nav"
+  */
+  --main-text-color: #000;
+
+  /* 
+    section titles
+    products names "FEATURED CATEGORIES"
+  */
+  --second-text-color: #111111;
+
+  /* nav menu items "FEATURED CATEGORIES" */
+  --third-text-color: #222222;
+
+   /* 
+    section sub titles "top of each section titles"
+    products names "FEATURED CATEGORIES"
+  */
+  --sub-title-section-color: #302F2F;
+
+  --header-nav-text-color: #32353C;
+  /* Colors: end*/
+
+  --main-font-size: 20px;
+
+  --main-btn-radius: 9px;
+  --main-btn-border-width: 0.4px;
+  --main-btn-opacity: 1;
+  --main-btn-width: 160px;
+  --main-btn-height: 28px;
+  --main-btn-shadow: 0px 3px 6px #FFFFFF5C;;
+
+
+}
+  
+*{
+  font-size: var(--main-font-size);
+  /* font-family: ; */
+}
