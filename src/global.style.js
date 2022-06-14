@@ -9,46 +9,64 @@ export const MainButton = styled('button')`
     height: var(--main-btn-height);
     border-radius: var(--main-btn-radius);
     color: var(--main-text-color);
-
+    cursor: pointer;
 `
+
+export const CustomButton = styled(MainButton)`
+    font-size: ${props => props.fontSize};
+    border: ${props => props.borderWidth} ${props => props.borderStyle} ${props => props.borderColor};
+    width: ${props => props.width};
+    height: ${props => props.height};
+    border-radius: ${props => props.borderRadius};
+    color: ${props => props.color};
+    background: ${props => props.background};
+    padding: ${props => props.padding};
+    box-shadow: ${props => props.boxShadow};
+    opacity: ${props => props.opacity};;
+`
+
+export const Nav = styled('nav')`
+    width: ${props => props.width};
+    padding: ${props => props.padding};
+    
+`;
+
+export const Title1 = styled.h1`
+    transform: Uppercase;
+`;
+
 
 export const Container = styled('main')`
     width: 100vw;
     max-width: 1950px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 `
 
 export const SecondaryContainer = styled(Container)`
-    width: 80%;
+    width: ${props => props.width};
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: ${props => props.padding};
 `
 
 export const FlexBox = styled('div')`
-    width: 100%;
+    width: ${props => props.width};
     display: flex;
-`
-
-export const FlexBoxColumn = styled(FlexBox)`
-    flex-direction: column;
-`
-export const FlexBoxColumnJustifyContentCenter = styled(FlexBoxColumn)`
-    justify-content: center;
-`
-
-export const FlexBoxColumnJustifyContentBetween = styled(FlexBoxColumn)`
-    justify-content: space-between;
-`
-
-export const FlexBoxJustifyContentCenter = styled(FlexBox)`
-    justify-content: center;
-`
-
-export const FlexBoxJustifyContentBetween = styled(FlexBox)`
-    justify-content: space-between;
+    flex-direction: ${props => props.flexDirection};
+    justify-content: ${props => props.justifyContent};
+    flex-wrap: ${props => props.fleWrap};
+    align-items: ${props => props.alignItems};
 `
 
 
 export const Paragraph = styled('p')`
     font-size: var(--main-font-size);
     color: ${props => props.color};
+`
+
+export const CustomList = styled('ol')`
+    /* display: ${props => props.diplay};; */
+    list-style-type: none;
 `

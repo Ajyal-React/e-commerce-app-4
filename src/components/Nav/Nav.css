@@ -1,1 +1,12 @@
 
+/* nav {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 0.79;
+} */
+
+.searchIcon {
+    background: transparent url('img/search.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: #000;
+}

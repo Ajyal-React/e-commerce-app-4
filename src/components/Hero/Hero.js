@@ -1,8 +1,11 @@
 import React from 'react'
+import { HeroContainer } from './Hero.style'
 
 function Hero() {
   return (
-    <div>Hero</div>
+    <HeroContainer>
+      
+    </HeroContainer>
   )
 }
 

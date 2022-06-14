@@ -3,19 +3,19 @@ import FeaturedCategories from '../../components/FeaturedCategories/FeaturedCate
 import FeaturedProducts from '../../components/FeaturedProducts/FeaturedProducts';
 import Hero from '../../components/Hero/Hero';
 import Nav from '../../components/Nav/Nav';
-import { MainButton, SecondaryContainer } from '../../global.style';
+import { Container, MainButton } from '../../global.style';
 import "./Home.css";
 
 
 function Home() {
   return (
     // <div>Home.component</div>
-    <SecondaryContainer>
+    <Container>
       <Nav/>
       <Hero/>
-      <FeaturedCategories/>
-      <FeaturedProducts/>
-    </SecondaryContainer>
+      {/* <FeaturedCategories/> */}
+      {/* <FeaturedProducts/> */}
+    </Container>
   )
 }
 
