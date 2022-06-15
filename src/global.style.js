@@ -42,6 +42,7 @@ export const Container = styled('main')`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: ${props => props.height};
 `
 
 export const SecondaryContainer = styled(Container)`
@@ -51,13 +52,26 @@ export const SecondaryContainer = styled(Container)`
     padding: ${props => props.padding};
 `
 
-export const FlexBox = styled('div')`
+
+export const FlexContainer = styled('div')`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: ${props => props.height?props.height:"100%"};
+`
+
+export const FlexContainerCol = styled(FlexContainer)`
+    flex-direction: column;
+`
+
+export const FlexBox = styled(FlexContainer)`
     width: ${props => props.width};
     display: flex;
     flex-direction: ${props => props.flexDirection};
     justify-content: ${props => props.justifyContent};
     flex-wrap: ${props => props.fleWrap};
     align-items: ${props => props.alignItems};
+    gap: ${props => props.gap};
 `
 
 
@@ -67,6 +81,11 @@ export const Paragraph = styled('p')`
 `
 
 export const CustomList = styled('ol')`
-    /* display: ${props => props.diplay};; */
+    /* display: ${props => props.diplay}; */
     list-style-type: none;
+`
+export const CustomListItem = styled('li')`
+    font-size: ${props => props.fontSize};
+    color: ${props => props.color};
+
 `

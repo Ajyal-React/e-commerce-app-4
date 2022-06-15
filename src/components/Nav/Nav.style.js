@@ -3,7 +3,7 @@ import {CustomButton, Nav} from "./../../global.style";
 
 export const MainNav = styled(Nav)`
     position: fixed;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #FFFFFF;
     box-shadow: 0px 3px 6px #00000029;
     opacity: 0.79;
 `

@@ -4,7 +4,6 @@ import FeaturedProducts from '../../components/FeaturedProducts/FeaturedProducts
 import Hero from '../../components/Hero/Hero';
 import Nav from '../../components/Nav/Nav';
 import { Container, MainButton } from '../../global.style';
-import "./Home.css";
 
 
 function Home() {
