@@ -10,6 +10,7 @@ export const MainButton = styled('button')`
     border-radius: var(--main-btn-radius);
     color: var(--main-text-color);
     cursor: pointer;
+    background: #fff;
 `
 
 export const CustomButton = styled(MainButton)`
@@ -32,7 +33,14 @@ export const Nav = styled('nav')`
 `;
 
 export const Title1 = styled.h1`
+    text-transform: Uppercase;
+    color: #fff;
+    opacity: 1;
+`;
+
+export const Title2 = styled.h2`
     transform: Uppercase;
+    color: #000
 `;
 
 
@@ -45,22 +53,42 @@ export const Container = styled('main')`
     height: ${props => props.height};
 `
 
-export const SecondaryContainer = styled(Container)`
-    width: ${props => props.width};
-    box-sizing: border-box;
+export const SecondaryContainer = styled('div')`
+    width: ${props => props.width? props.width: '100%'};
     margin: 0 auto;
-    padding: ${props => props.padding};
+    padding: ${props => props.padding? props.padding: '0'};
+    height: ${props => props.height? props.height: '100%'};
+    box-sizing: border-box;
+`
+
+export const InsideContainer = styled(SecondaryContainer)`
+    width: auto;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
 `
 
 
 export const FlexContainer = styled('div')`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: ${props => props.justify?props.justify: "space-between"};
     height: ${props => props.height?props.height:"100%"};
+    gap: ${props => props.gap? props.gap: '22px'};
+    box-sizing: border-box;
+`
+export const FlexContainerItemsCenter = styled(FlexContainer)`
+    align-items: center;
+`
+export const CenterFlex = styled(FlexContainerItemsCenter)`
+   justify-content: center;
 `
 
 export const FlexContainerCol = styled(FlexContainer)`
+    flex-direction: column;
+`
+export const CenterFlexCol = styled(CenterFlex)`
     flex-direction: column;
 `
 
@@ -77,15 +105,62 @@ export const FlexBox = styled(FlexContainer)`
 
 export const Paragraph = styled('p')`
     font-size: var(--main-font-size);
-    color: ${props => props.color};
+    color: ${props => props.color? props.color:"#fff"};
+    text-transform: lowercase;
 `
 
 export const CustomList = styled('ol')`
-    /* display: ${props => props.diplay}; */
     list-style-type: none;
+    color: #32353C;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: auto;
 `
 export const CustomListItem = styled('li')`
-    font-size: ${props => props.fontSize};
-    color: ${props => props.color};
+    /* font-size: 22px; */
+    color: ${props => props.color? props.color: '#32353C'};;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    /* font: normal normal normal; */
+    letter-spacing: 0px;
+`
 
+export const Icon = styled('i')`
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: #000;
+`
+
+export const Select = styled('select')`
+    &:hover{
+        cursor: pointer;
+    }
+    background: transparent 0% 0% no-repeat padding-box;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    opacity: 1;
+    font-size: var(--main-font-size);
+    width: 125px;
+    height: 43px;
+    text-align: center;
+
+`
+
+export const Image = styled('img')`
+    src: ${props => props.src};
+    opacity: 1;
+`
+
+export const RelativeContainer = styled('div')`
+    all: unset;
+    position: relative;
+    box-sizing: border-box;
+`
+
+export const AbsoluteContainer = styled('div')`
+    position: absolute;
+    box-sizing: border-box;
+    width: ${props => props.width?props.width:"auto"}
 `

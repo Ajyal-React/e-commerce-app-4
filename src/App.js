@@ -21,10 +21,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Navigate to="/Home" />}/>
         <Route path='Home' element={<Home/>} />
-        <Route path='auth' element={<Auth/>}>
+        <Route path='Auth' element={<Auth/>}>
           {/* <Route index element={<Login/>}></Route> */}
-          <Route exact path="/auth" element={<Navigate to="/auth/login" />}/>
-          <Route path='login' element={<Login/>}></Route>
+          <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>
+          <Route path='Login' element={<Login/>}></Route>
         </Route>
       </Routes>
     </Router>

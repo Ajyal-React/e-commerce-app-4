@@ -3,10 +3,7 @@
   /* Colors: start*/
 
   /* #FA7400
-    color: 
-      sign btn &
-      Home nav item &
-      contacts icons "FOOTER => CONTACTS section";
+    color: sign btn & Home nav item & contacts icons "FOOTER => CONTACTS section";
     background:
       scroll btn in bottom of hero &
       mobile "active nav item in FEATURED CATEGORIES" &
@@ -107,7 +104,7 @@
   --header-nav-text-color: #32353C;
   /* Colors: end*/
 
-  --main-font-size: 20px;
+  --main-font-size: 18px;
 
   --main-btn-radius: 9px;
   --main-btn-border-width: 0.4px;
@@ -123,4 +120,16 @@
   font-size: var(--main-font-size);
   font-family: 'Open Sans', sans-serif;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a.active, a.active > li{
+  color : var(--main-color) !important;
 }

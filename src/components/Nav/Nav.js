@@ -1,46 +1,56 @@
 import React from 'react'
-import { CustomButton, CustomList, FlexBox, SecondaryContainer } from '../../global.style'
-import { LangSelect, MainNav, SignBtn } from './Nav.style'
+import { FlexContainerItemsCenter, CustomListItem, InsideContainer, CustomList, SecondaryContainer, CenterFlex, Image } from '../../global.style'
+import { LangSelect, MainNav, SearchIcon, SignBtn, CustomNavList, CustomNavLink } from './Nav.style'
 import { FaSearch } from "react-icons/fa";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Nav() {
-  const [naveMenu, setNavMenu] = React.useState(["Home","New arrival","Mobiles","Laptops","Headphones","Accessories"])
+  const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"])
   return (
     <MainNav width="100%" padding="1.5rem 0">
-      <SecondaryContainer width="85%">
-        <FlexBox justifyContent="space-between" alignItems="center">
-          <FlexBox width="187.5px" justifyContent="space-between" alignItems="center">
-            <LangSelect>
-              <option value="English">English</option>
-              <option value="Arabic">Arabic</option>
-            </LangSelect>
-            <FaSearch className='searchIcon' />
-          </FlexBox>
-
+      <SecondaryContainer width="90%">
+        <FlexContainerItemsCenter>
+          <InsideContainer width="175px">
+            <CenterFlex gap="26px">
+              <LangSelect>
+                <option value="English">English</option>
+                <option value="Arabic">Arabic</option>
+              </LangSelect>
+              <SearchIcon>
+                <FaSearch className='searchIcon' />
+              </SearchIcon>
+            </CenterFlex>
+          </InsideContainer>
           <CustomList>
-            <FlexBox gap="25px" justifyContent="space-between" alignItems="center">
+            <FlexContainerItemsCenter gap="26px">
               {naveMenu.map((item,index) => {
-                return (index===0?
-                  <li fontColor="var(--main-color)" fontSize="22px" key={index}>{item}</li>
+                return (index== 0?
+                  <CustomNavLink to="/Home" activeClassName="active" key={index}>
+                    <CustomListItem >{item}</CustomListItem>
+                  </CustomNavLink>
                   :
-                  <li fontColor="var(--header-nav-text-color)" fontSize="22px" key={index}>{item}</li>
+                  (index== 3?
+                    <CustomListItem key={index}>
+                      <Image height="28px" src="./images/Group 14849.png"></Image>
+                    </CustomListItem>
+                    :
+                    <CustomNavLink to={'/'+item} key={index}>
+                      <CustomListItem fontColor="var(--header-nav-text-color)">{item}</CustomListItem>
+                    </CustomNavLink>
+                  )
                 )
-                })}
-            </FlexBox>
-
+              })}
+            </FlexContainerItemsCenter>
           </CustomList>
-          <Link to="/auth/login">
-            <SignBtn color="var(--main-color)" background="#F9F8F8" width="122px" height="48px" borderRadius="25px" opacity="1">
-              Sign In
-            </SignBtn>
-          </Link>
-        </FlexBox>
+          <InsideContainer width="100px">
+            {/* <button style={{background: '#fff'}}>Sign In</button> */}
+            <Link to="/Auth/Login">
+              <SignBtn>
+                Sign In
+              </SignBtn>
+            </Link>
+          </InsideContainer>
+        </FlexContainerItemsCenter>
       </SecondaryContainer>
     </MainNav>
   )
