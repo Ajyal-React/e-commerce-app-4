@@ -138,3 +138,59 @@
 a.active, a.active > li{
   color : var(--main-color) !important;
 }
+
+.titleLogin{
+  display: flex;
+  gap:10px;
+}
+.columnBox{
+  width: 8px;
+  height: 100%;
+  background: #efa15c;
+}
+.inputsDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.inputsDiv > div{
+
+  background: #fff;
+  padding:0 20px 0 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.inputsDiv  div input {
+  border: none;
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+}
+
+.btnLogin{
+  width: 20%;
+  align-self: end;
+  background: none;
+  font-size: 14px;
+  border: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.btnLogin text {
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.icon{
+  width:100px;
+  height: 100%;
+  background: #efa15c;
+  border-radius: 50%;
+  color: #fff;
+}
+

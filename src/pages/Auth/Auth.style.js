@@ -12,7 +12,7 @@ export const InsideContainer = styled("div")`
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  gap: 39px;
+  gap: 50px;
   box-sizing: border-box;
 `
 

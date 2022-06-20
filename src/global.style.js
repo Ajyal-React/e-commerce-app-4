@@ -93,8 +93,11 @@ export const FlexContainerCol = styled(FlexContainer)`
 `
 export const CenterFlexCol = styled('div')`
   display: flex;
-  align-items: center;
+  align-items:${props => props.alignItems? props.alignItems: 'center'};
+  justify-content: center;
     flex-direction: column;
+  gap: 20px;
+  width:${props => props.width? props.width: '100%'};
 `
 
 export const FlexBox = styled(FlexContainer)`

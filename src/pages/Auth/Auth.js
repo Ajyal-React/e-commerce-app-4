@@ -34,10 +34,23 @@ function Auth() {
                   </InsideContainer>
                 </CenterFlexCol>
             </InsideContainer>
-            <InsideContainer width="64%" bgColor="#F3F3F3">
-              <CenterFlexCol>
-                <Outlet>
-                </Outlet>
+            <InsideContainer flex="flex" width="64%" bgColor="#F3F3F3">
+              <CenterFlexCol width="40%" alignItems="start">
+                  <div className="titleLogin">
+                      <div className="columnBox"></div>
+                      <h2>LOGIN</h2>
+                  </div>
+                    <div className="inputsDiv">
+                        <div>
+                            <input type="text" placeholder="Enter username"/>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password"/>
+                        </div>
+                        <button className="btnLogin"><text>Login</text>
+                        <div className="icon">-></div>
+                        </button>
+                    </div>
               </CenterFlexCol>
             </InsideContainer>
         </FlexContainer>
