@@ -14,7 +14,7 @@ export const CustomImg = styled('img')`
 
 export const AuthParagraph = styled(Paragraph)`
     font: normal normal normal 18px/24px Open Sans;
-    letter-spacing: ${props => props.spacing?props.spacing:"0px"}
+    letter-spacing: ${props => props.spacing?props.spacing:"0px"};
     color: #F3F3F3;
     opacity: 60%;
     font-weight: ${props => props.weight};
