@@ -46,12 +46,12 @@ export const Title2 = styled.h2`
 
 export const Container = styled('main')`
     width: 100vw;
-    max-width: 1950px;
-    margin: 0;
-    padding: 0;
+  min-width: 100%;
+ height: 100vh;
+  
     box-sizing: border-box;
-    height: ${props => props.height};
 `
+
 
 export const SecondaryContainer = styled('div')`
     width: ${props => props.width? props.width: '100%'};
@@ -72,11 +72,14 @@ export const InsideContainer = styled(SecondaryContainer)`
 
 export const FlexContainer = styled('div')`
     width: 100%;
+  max-width: 100%;
     display: flex;
     justify-content: ${props => props.justify?props.justify: "space-between"};
     height: ${props => props.height?props.height:"100%"};
+  flex-wrap: wrap;
     gap: ${props => props.gap? props.gap: '22px'};
     box-sizing: border-box;
+  
 `
 export const FlexContainerItemsCenter = styled(FlexContainer)`
     align-items: center;
@@ -88,7 +91,9 @@ export const CenterFlex = styled(FlexContainerItemsCenter)`
 export const FlexContainerCol = styled(FlexContainer)`
     flex-direction: column;
 `
-export const CenterFlexCol = styled(CenterFlex)`
+export const CenterFlexCol = styled('div')`
+  display: flex;
+  align-items: center;
     flex-direction: column;
 `
 
@@ -154,13 +159,14 @@ export const Image = styled('img')`
 `
 
 export const RelativeContainer = styled('div')`
-    all: unset;
-    position: relative;
     box-sizing: border-box;
 `
 
 export const AbsoluteContainer = styled('div')`
-    position: absolute;
     box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+  margin-top: 5vh;
     width: ${props => props.width?props.width:"auto"}
 `

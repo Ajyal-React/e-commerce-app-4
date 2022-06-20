@@ -8,12 +8,18 @@ export const HeroContainer = styled('div')`
     background-position: center;
     background-repeat: no-repeat, repeat;
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
+    padding:0 10% 0 10%;
+  
 `
 
 export const HeroContent = styled(RelativeContainer)`
-    top: 45%; 
-    left: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  max-width: 100%;
 `
 
 export const HeroParagraph = styled(Paragraph)`
