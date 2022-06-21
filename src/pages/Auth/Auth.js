@@ -1,5 +1,4 @@
 import React from 'react'
-import Login from '../Login/Login'
 import "../../App.css"
 
 import {
@@ -8,11 +7,12 @@ import {
     BrowserRouter,
     Routes,
     useHistory,
-    Outlet
+    Outlet,
   } from "react-router-dom";
 
 import { CenterFlexCol, Container, FlexBox, FlexContainer, FlexContainerCol } from '../../global.style';
 import {CustomImg, InsideContainer, AuthTitle, AuthParagraph, Article} from './Auth.style';
+import LoginComponent from '../../components/LoginComponent/LoginComponent';
 
 function Auth() {
   return (
@@ -36,21 +36,7 @@ function Auth() {
             </InsideContainer>
             <InsideContainer flex="flex" width="64%" bgColor="#F3F3F3">
               <CenterFlexCol width="40%" alignItems="start">
-                  <div className="titleLogin">
-                      <div className="columnBox"></div>
-                      <h2>LOGIN</h2>
-                  </div>
-                    <div className="inputsDiv">
-                        <div>
-                            <input type="text" placeholder="Enter username"/>
-                        </div>
-                        <div>
-                            <input type="password" placeholder="Password"/>
-                        </div>
-                        <button className="btnLogin"><text>Login</text>
-                        <div className="icon">-></div>
-                        </button>
-                    </div>
+                <Outlet/>
               </CenterFlexCol>
             </InsideContainer>
         </FlexContainer>

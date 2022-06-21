@@ -7,13 +7,12 @@ export const InsideContainer = styled("div")`
     background: ${props => props.bgColor? props.bgColor : "#f3f3f3"};
     width: ${props => props.width};
     height: ${props => props.height? props.height :"100%"};
-  display: ${props => props.flex ? "flex" : "inline"};
-  
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 50px;
-  box-sizing: border-box;
+    display: ${props => props.flex ? "flex" : "inline"};
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 50px;
+    box-sizing: border-box;
 `
 
 export const CustomImg = styled('img')`
