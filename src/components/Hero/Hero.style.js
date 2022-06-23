@@ -9,7 +9,7 @@ export const HeroContainer = styled('div')`
     background-repeat: no-repeat, repeat;
     box-sizing: border-box;
     width: 100vw;
-    padding:0 10% 0 10%;
+    padding:0 7.5%;
   
 `
 

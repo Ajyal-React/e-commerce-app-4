@@ -12,8 +12,8 @@ function Home() {
     <Container>
       <Nav/>
       <Hero/>
-      {/* <FeaturedCategories/> */}
-      {/* <FeaturedProducts/> */}
+      <FeaturedCategories/>
+      <FeaturedProducts/>
     </Container>
   )
 }

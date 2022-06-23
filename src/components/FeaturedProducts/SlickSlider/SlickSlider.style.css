@@ -1,0 +1,82 @@
+.slick-next:before {
+    content: '\276F';
+
+    transform: matrix(0, 1, -1, 0, 0, 0);
+}
+.slick-next {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    height: 2.4rem;
+    width: 1.3rem;
+    position: absolute;
+    padding: 0.63rem 0.5rem;
+    right: -7%;
+}
+
+.slick-prev:before {
+    content: '\276E';
+    transform: matrix(0, 1, -1, 0, 0, 0);
+    font-size: 1rem;
+}
+
+.slick-prev {
+    content: '\276E';
+    position: absolute;
+    left: -9%;
+    height: 2.4rem;
+    width: 1.3rem;
+    padding: 0.63rem 0.2rem 0 0;
+    /* border-radius: 0 100% 100% 0; */
+    border-radius: 0px 100% 100% 0px / 0px 50% 50% 0px;
+}
+
+.slick-arrow{
+    background: var(--main-color) !important;
+    text-align: center;
+}
+
+.imgCard{
+    width: 100%;
+}
+
+.imgCard > img{
+    height: 10rem;
+    width: 95%;
+    border: 1px solid gray;
+
+}
+
+.productCard{
+    margin: 0 1rem;
+    width: 10rem;
+}
+
+.cardDetails{
+
+}
+
+.sliderContiner{
+    width: 100%;
+}
+
+.pName { 
+    text-align: center;
+    font: normal normal 600 10px/21px Poppins;
+    letter-spacing: -0.35px;
+    color: #111111;
+}
+
+.pPrice { 
+    text-align: center;
+    font: normal normal medium 8.5px/11px Roboto;
+    letter-spacing: -0.25px;
+    color: #FF4F04;
+    background: #FF4F0416;
+    width: 50%;
+}
+
+.cardDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

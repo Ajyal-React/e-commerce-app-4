@@ -8,7 +8,7 @@ function Nav() {
   const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"])
   return (
     <MainNav width="100vw" padding="1.5rem 0">
-      <SecondaryContainer width="90%">
+      <SecondaryContainer width="85%">
         <FlexContainerItemsCenter>
           <InsideContainer width="175px">
             <CenterFlex gap="26px">
