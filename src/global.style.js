@@ -46,9 +46,8 @@ export const Title2 = styled.h2`
 
 export const Container = styled('main')`
     width: 100vw;
-  min-width: 100%;
- height: 100vh;
-  
+    min-width: 100%;
+    height: 100vh;
     box-sizing: border-box;
 `
 
@@ -92,12 +91,12 @@ export const FlexContainerCol = styled(FlexContainer)`
     flex-direction: column;
 `
 export const CenterFlexCol = styled('div')`
-  display: flex;
-  align-items:${props => props.alignItems? props.alignItems: 'center'};
-  justify-content: center;
-    flex-direction: column;
-  gap: 20px;
-  width:${props => props.width? props.width: '100%'};
+    display: flex;
+    align-items:${props => props.alignItems? props.alignItems: 'center'};
+    justify-content: center;
+        flex-direction: column;
+    gap: 20px;
+    width:${props => props.width? props.width: '100%'};
 `
 
 export const FormFlexCol = styled.form`
