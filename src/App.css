@@ -122,7 +122,9 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
-
+body{
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
 *{
   margin: 0;
   padding: 0;

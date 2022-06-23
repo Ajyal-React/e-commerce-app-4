@@ -12,7 +12,7 @@ function Home() {
     <Container>
       <Nav/>
       <Hero/>
-      {/* <FeaturedCategories/> */}
+       <FeaturedCategories/>
       {/* <FeaturedProducts/> */}
     </Container>
   )
