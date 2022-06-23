@@ -54,7 +54,6 @@ row-gap: 15px;
 `
 export const CatagoriItem = styled('div')`
     width: 320px;
-    border: 1px solid #808080;
     border-radius: 10px;
     background-color: #F9F8F8;
 `
@@ -85,7 +84,7 @@ width: 40%;
 export const CatagoriItemSlider = styled('div')`
     width: 100%;
     height: 100%;
-    border: 1px solid #808080;
+
     border-radius: 10px;
     background-color: #F9F8F8;
 `
