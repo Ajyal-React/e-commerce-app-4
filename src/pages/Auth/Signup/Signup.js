@@ -1,5 +1,4 @@
 import React from 'react'
-import Login from '../../Login/Login'
 import "../../../App.css"
 
 import { Formik,useFormik } from 'formik';
@@ -21,8 +20,6 @@ import axios from "axios";
 
 function Signup() {
 
-    const [state,setstate] = React.useState([])
-    // const frmi = useFormik([])
 
     return (
 
