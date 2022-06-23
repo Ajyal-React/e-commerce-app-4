@@ -100,6 +100,16 @@ export const CenterFlexCol = styled('div')`
   width:${props => props.width? props.width: '100%'};
 `
 
+export const FormFlexCol = styled.form`
+  display: flex;
+  align-items:${props => props.alignItems? props.alignItems: 'center'};
+  justify-content: center;
+    flex-direction: column;
+  gap: 20px;
+  width:${props => props.width? props.width: '100%'};
+`
+
+
 export const FlexBox = styled(FlexContainer)`
     width: ${props => props.width};
     display: flex;

@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import Signup from "./pages/Auth/Signup/Signup";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Navigate to="/Home" />}/>
+        <Route path='sign-up' element={<Signup/>}/>
         <Route path='Home' element={<Home/>} />
         <Route path='Auth' element={<Auth/>}>
           {/* <Route index element={<Login/>}></Route> */}

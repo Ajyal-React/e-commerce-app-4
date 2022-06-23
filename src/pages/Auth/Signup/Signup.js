@@ -1,8 +1,8 @@
 import React from 'react'
-import Login from '../Login/Login'
-import "../../App.css"
+import Login from '../../Login/Login'
+import "../../../App.css"
 
-import { Formik } from 'formik';
+import { Formik,useFormik } from 'formik';
 
 
 
@@ -15,11 +15,14 @@ import {
     Outlet
 } from "react-router-dom";
 
-import {CenterFlexCol, Container, FlexBox, FlexContainer, FlexContainerCol, FormFlexCol} from '../../global.style';
-import {CustomImg, InsideContainer, AuthTitle, AuthParagraph, Article} from './Auth.style';
+import {CenterFlexCol, Container, FlexBox, FlexContainer, FlexContainerCol, FormFlexCol} from '../../../global.style';
+import {CustomImg, InsideContainer, AuthTitle, AuthParagraph, Article} from '../Auth.style';
+import axios from "axios";
 
-function Auth() {
+function Signup() {
 
+    const [state,setstate] = React.useState([])
+    // const frmi = useFormik([])
 
     return (
 
@@ -47,9 +50,9 @@ function Auth() {
                 <InsideContainer flex="flex" width="64%" bgColor="#F3F3F3">
 
                     <Formik
-                        initialValues={{ email: '', password: '' }}
+                        initialValues={{ email: '', password: '' ,confirmPassword:''}}
                         onSubmit={() => {
-                            console.log("onSubmit")
+                            // axios.post("",va)
                         }
                         }
                     >
@@ -66,14 +69,17 @@ function Auth() {
                             <FormFlexCol width="40%" alignItems="start" onSubmit={handleSubmit}>
                                 <div className="titleLogin">
                                     <div className="columnBox"></div>
-                                    <h2>LOGIN</h2>
+                                    <h2>SIGN UP</h2>
                                 </div>
                                 <div className="inputsDiv">
                                     <div>
-                                        <input type="text" name="email" placeholder="Enter username"/>
+                                        <input onChange={handleChange} onBlur={handleBlur} value={values.email} type="text" name="email" placeholder="Enter username"/>
                                     </div>
                                     <div>
-                                        <input type="password" name="password" placeholder="Password"/>
+                                        <input type="password" onChange={handleChange} onBlur={handleBlur} value={values.password} name="password" placeholder="Password"/>
+                                    </div>
+                                    <div>
+                                        <input type="password" onChange={handleChange} onBlur={handleBlur} value={values.confirmPassword} name="confirmPassword" placeholder="Confirm Password"/>
                                     </div>
                                     <button className="btnLogin">
                                         <text>Login</text>
@@ -89,4 +95,4 @@ function Auth() {
     )
 }
 
-export default Auth
+export default Signup
