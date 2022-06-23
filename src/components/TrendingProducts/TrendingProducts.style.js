@@ -45,6 +45,7 @@ export const Price = styled.div `
   color: #fff;
   border-radius: 40px;
   font-size: 12px;
+   padding: 8px;
 `
 
 export const TexT = styled.p `
