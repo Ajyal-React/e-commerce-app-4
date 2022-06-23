@@ -38,6 +38,7 @@ function Signup() {
                             <CustomImg width="90%" src='/images/Group 14849.png'></CustomImg>
                             <Article>
                                 <AuthTitle>
+
                                     Welcome Back!
                                 </AuthTitle>
                                 <AuthParagraph>
