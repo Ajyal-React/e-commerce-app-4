@@ -1,29 +1,43 @@
-import { Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Formik, Field  } from "formik";
 import { MainButton, SecondaryContainer } from "../../global.style";
-import {
-    useHistory,
-  } from "react-router-dom";
+
+import * as yup from 'yup';
+import { ErrorSpan } from "./LoginComponent.style";
+import { Login } from "../../redux/user/user.actions"
+import { useDispatch, useSelector } from "react-redux"
+import { UserStateSelector } from "../../redux/selectors";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 
 function LoginComponent(){
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const userData = UserStateSelector();
+    useEffect(() => {
+        if(!!userData){
+            navigate('/Home');
+        }
+    }, [userData])
+    const schema = yup.object().shape({
+        password: yup.string().required('Password is required!').min(8,'Too Short!'),
+        email: yup.string().email().required('email is required!').min(6,'Too Short!'),
+    });
     return (
         <>
             <Formik
-                initialValues={{ username: '', password: '' }}
-                validate={values => {
-                    const errors = {};
-                    if (!values.username) {
-                      errors.username = 'Required';
-                    }
-                    if(!values.password){
-                        errors.password = 'Required'
-                    }
-                    return errors;
-                  }}
-                onSubmit={(values, { setSubmitting }) => {
-                    setSubmitting(true);
-                    // history.push("/home");
+                initialValues={{ email: 'omaralhafni@gmail.com', password: 'omarAlhafni@123456' }}
+                validationSchema={schema}
+                onSubmit={values => {
+                    // same shape as initial values
+                    console.log(values);
+                    dispatch(Login(values));
+                    // navigate("/home");
+
+                    // console.log("user:",data)
+
                 }}
+
                 >
                     {({
                         values,
@@ -42,24 +56,21 @@ function LoginComponent(){
                             </div>
                             <div className="inputsDiv">
                                 <div>
-                                    <input 
-                                        name="username"
-                                        type="text"
-                                        placeholder="Enter username"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.username}/>
+                                    <Field 
+                                        name="email" 
+                                        type="email"
+                                        placeholder="Enter Email"
+                                    /> 
+                                    {(errors.email && touched.email) && <ErrorSpan>{errors.email}</ErrorSpan>}
                                 </div>
-                                {errors.username && touched.username && errors.username}
+                                
                                 <div>
-                                    <input 
+                                    <Field 
                                         name="password" 
                                         type="password"
                                         placeholder="Password"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.password}/>
-                                    {errors.password && touched.password && errors.password}
+                                    /> 
+                                    {(errors.password && touched.password) && <ErrorSpan>{errors.password}</ErrorSpan>}
                                 </div>
                                 <button className="btnLogin" type="submit" onClick={handleSubmit}>
                                     <text>Login</text>
@@ -70,11 +81,11 @@ function LoginComponent(){
                         // </form>
                     )}
             </Formik>
-            <Link to="/Auth/Signup">
+            {/* <Link to="/Auth/Signup">
                 <MainButton>
                     Sign up
                 </MainButton>
-            </Link>
+            </Link> */}
         </>
     )
 }

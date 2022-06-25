@@ -5,7 +5,6 @@ import Hero from '../../components/Hero/Hero';
 import Nav from '../../components/Nav/Nav';
 import { Container, MainButton } from '../../global.style';
 
-
 function Home() {
   return (
     // <div>Home.component</div>

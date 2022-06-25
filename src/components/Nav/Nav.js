@@ -3,9 +3,11 @@ import { FlexContainerItemsCenter, CustomListItem, InsideContainer, CustomList, 
 import { LangSelect, MainNav, SearchIcon, SignBtn, CustomNavList, CustomNavLink } from './Nav.style'
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { UserStateSelector } from "../../redux/selectors";
 
 function Nav() {
-  const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"])
+  const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"]);
+  const userData = UserStateSelector();
   return (
     <MainNav width="100vw" padding="1.5rem 0">
       <SecondaryContainer width="85%">
@@ -44,11 +46,13 @@ function Nav() {
           </CustomList>
           <InsideContainer width="100px">
             {/* <button style={{background: '#fff'}}>Sign In</button> */}
-            <Link to="/Auth/Login">
-              <SignBtn>
-                Sign In
-              </SignBtn>
-            </Link>
+            {!userData ?
+              <Link to="/Auth/Login">
+                <SignBtn>
+                  Sign In
+                </SignBtn>
+              </Link>: null
+            }
           </InsideContainer>
         </FlexContainerItemsCenter>
       </SecondaryContainer>

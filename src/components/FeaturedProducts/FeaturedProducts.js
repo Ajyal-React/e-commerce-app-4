@@ -1,24 +1,25 @@
 import axios from 'axios';
 import React from 'react'
-import { environment } from '../../environments/environment';
 import { FullWidthContainer, SectionsMainParagraph, FullWidthSection, SecondaryContainer, SectionsMainTitle } from '../../global.style'
 import SlickSlider from './SlickSlider/SlickSlider';
+import { useSelector } from "react-redux";
 
 function FeaturedProducts() {
   const [data, setData] = React.useState([]);
-  React.useEffect(() => {
-    getTrendingProducts();
-  }, [])
+  // React.useEffect(() => {
+  //   getTrendingProducts();
+  // }, [])
 
-  const url = environment.baseUrl+'/products/trending-products';
-  const getTrendingProducts = () => {
-    axios.get(url)
-      .then((res) => {
-        console.log(res);
-        setData(res.data);
-      })
-      .catch((err) => { alert(err); });
-  }
+  const url = "";
+  // environment.baseUrl+'/products/trending-products';
+  // const getTrendingProducts = () => {
+  //   axios.get(url)
+  //     .then((res) => {
+  //       console.log(res);
+  //       setData(res.data);
+  //     })
+  //     .catch((err) => { alert(err); });
+  // }
 
   return (
     <FullWidthSection>
