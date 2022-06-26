@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home/Home';
 // import Login from './pages/Login/Login';
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,22 +9,31 @@ import {
   Routes,
   useHistory,
   Redirect,
-  Navigate
+  Navigate,
+  useNavigate
 } from "react-router-dom";
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import SignupComponent from './components/SignupComponent/SignupComponent';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserStateSelector } from './redux/user/user.selectors';
 function App() {
-  // please don't remove this comment
-  // useHistory.push("/home");
+
+  const userData = UserStateSelector();
+
+  // useEffect(() => {
+  //   if(!userData){
+  //       navigate('/Auth/Login');
+  //   }
+  // }, [userData]);
+
 
   return (
     <>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/Home" />}/>
+          <Route exact path="/" element={<Navigate to={!!userData?"/Home":"Auth"} />}/>
           <Route path='Home' element={<Home/>} />
           <Route path='Auth' element={<Auth/>}>
             <Route index element={<LoginComponent/>}></Route>
@@ -35,7 +44,7 @@ function App() {
         </Routes>
       </Router>
       <ToastContainer
-        position="top-right"
+        position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
         closeOnClick

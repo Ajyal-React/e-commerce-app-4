@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { ImagesContainer } from "../FeaturedProducts.style";
+import ProductItem from "../ProductItem";
 
 import "./SlickSlider.style.css";
 
@@ -48,15 +49,7 @@ export default class SlickSlider extends Component {
         <Slider {...settings}>
             {this.state.data.map(
               item =>
-              <div className="productCard"> 
-                <div className="imgCard">
-                  <img src={item['images']}/>
-                </div> 
-                <div className="cardDetails">
-                  <p className="pName">{item['name']}</p>
-                  <p className="pPrice">{item['price']}</p>
-                </div>
-              </div>
+              <ProductItem item={item}/>
             )}
 
         </Slider>

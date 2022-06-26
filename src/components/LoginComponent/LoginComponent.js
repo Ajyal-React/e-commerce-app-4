@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { ErrorSpan } from "./LoginComponent.style";
 import { Login } from "../../redux/user/user.actions"
 import { useDispatch, useSelector } from "react-redux"
-import { UserStateSelector } from "../../redux/selectors";
+import { UserStateSelector } from "../../redux/user/user.selectors";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -30,7 +30,7 @@ function LoginComponent(){
                 validationSchema={schema}
                 onSubmit={values => {
                     // same shape as initial values
-                    console.log(values);
+                    // console.log(values);
                     dispatch(Login(values));
                     // navigate("/home");
 

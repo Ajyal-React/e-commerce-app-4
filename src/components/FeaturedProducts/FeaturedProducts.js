@@ -2,24 +2,18 @@ import axios from 'axios';
 import React from 'react'
 import { FullWidthContainer, SectionsMainParagraph, FullWidthSection, SecondaryContainer, SectionsMainTitle } from '../../global.style'
 import SlickSlider from './SlickSlider/SlickSlider';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { FeaturedProductsStateSelector } from '../../redux/home/home.selectors';
+import { GetFeaturedProducts } from '../../redux/home/home.actions';
 
 function FeaturedProducts() {
-  const [data, setData] = React.useState([]);
-  // React.useEffect(() => {
-  //   getTrendingProducts();
-  // }, [])
+  const dispatch = useDispatch();
+  const data = FeaturedProductsStateSelector();
+  React.useEffect(() => {
+    dispatch(GetFeaturedProducts());
+  }, [])
 
-  const url = "";
-  // environment.baseUrl+'/products/trending-products';
-  // const getTrendingProducts = () => {
-  //   axios.get(url)
-  //     .then((res) => {
-  //       console.log(res);
-  //       setData(res.data);
-  //     })
-  //     .catch((err) => { alert(err); });
-  // }
+
 
   return (
     <FullWidthSection>

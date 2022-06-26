@@ -1,13 +1,22 @@
 import React from 'react'
-import { FlexContainerItemsCenter, CustomListItem, InsideContainer, CustomList, SecondaryContainer, CenterFlex, Image } from '../../global.style'
-import { LangSelect, MainNav, SearchIcon, SignBtn, CustomNavList, CustomNavLink } from './Nav.style'
+import { FlexContainerItemsCenter, CustomListItem, InsideContainer, CustomList, SecondaryContainer, CenterFlex, Image } from '../../global.style';
+import { LangSelect, MainNav, SearchIcon, SignBtn, CustomNavList, CustomNavLink, SignOutBtn } from './Nav.style';
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import { UserStateSelector } from "../../redux/selectors";
+import { UserStateSelector } from "../../redux/user/user.selectors";
+import { useDispatch } from 'react-redux';
+import { Logout } from '../../redux/user/user.actions';
 
 function Nav() {
   const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"]);
   const userData = UserStateSelector();
+
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    dispatch(Logout());
+  }
+
   return (
     <MainNav width="100vw" padding="1.5rem 0">
       <SecondaryContainer width="85%">
@@ -27,7 +36,7 @@ function Nav() {
             <FlexContainerItemsCenter gap="26px">
               {naveMenu.map((item,index) => {
                 return (index== 0?
-                  <CustomNavLink to="/Home" activeClassName="active" key={index}>
+                  <CustomNavLink to="/Home" activeclassname="active" key={index}>
                     <CustomListItem >{item}</CustomListItem>
                   </CustomNavLink>
                   :
@@ -51,7 +60,13 @@ function Nav() {
                 <SignBtn>
                   Sign In
                 </SignBtn>
-              </Link>: null
+              </Link>
+              :
+              // <Link to="/Auth/Login">
+                <SignOutBtn onClick={() => signOut()}>
+                  Sign out
+                </SignOutBtn>
+              // </Link>
             }
           </InsideContainer>
         </FlexContainerItemsCenter>
