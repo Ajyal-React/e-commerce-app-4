@@ -1,17 +1,17 @@
 
 import { combineReducers } from "redux";
-import { HomeReducers, initialHomeStates } from "./home/homeReducers/homeReducers";
+import { ProductsReducer, ProductsReducerEnum } from "./products/products.reducers";
 import { UserReducer, UserReducerEnum } from "./user/user.reducer";
 
 export const initialStore = {
     [`${UserReducerEnum}`]: JSON.parse(localStorage.getItem('User')),
-    ...initialHomeStates
+    [`${ProductsReducerEnum}`]: {},
 };
 
 const rootReducers = combineReducers(
     {
         [`${UserReducerEnum}`] : UserReducer,
-        ...HomeReducers
+        [`${ProductsReducerEnum}`]: ProductsReducer,
     }
 );
 

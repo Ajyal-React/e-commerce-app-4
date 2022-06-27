@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { AxiosPostData } from '../../utils/axios.service.js';
+import { AxiosPostData } from '../../services/axios.service.js';
 import USER_ACTION_TYPES from './userActionsTypes.constant';
 
 export const Login = (values) => {

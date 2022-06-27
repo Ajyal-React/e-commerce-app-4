@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FlexContainerCol, InsideContainer, Paragraph, RelativeContainer, Title1 } from "../../global.style";
 
 export const HeroContainer = styled('div')`
-    background: url("/images/Group 14850.png");
+    background: url(${props => props.img&&props.img});
     height: 100vh;
     background-size: cover;
     background-position: center;

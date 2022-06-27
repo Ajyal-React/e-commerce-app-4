@@ -4,15 +4,14 @@ import { AuthorizationSelector } from "../redux/user/user.selectors";
 
 export const BaseUrl = environment.baseUrl;
 
-
 export const config = {
     headers: { Authorization:  AuthorizationSelector}
 };
 
-export const AxiosGetData = (endPoint) => {
+export const AxiosGetData = (endPoint, params={}) => {
     return axios.get(BaseUrl+endPoint, {config});
 }
 
-export const AxiosPostData = (endPoint, body) => {
+export const AxiosPostData = (endPoint, body={}) => {
     return axios.post(BaseUrl+endPoint, !!body?body:{}, {config});
 }

@@ -16,10 +16,12 @@ export const SliderImageBox = styled('div')`
 `
 
 export const ProductCard = styled('div')`
+    min-width: 270px;
     width: 15rem;
     height: 22rem;
     padding: 1rem;
     box-sizing: border-box;
+    margin: 0 auto;
 `
 
 export const ImgCard = styled('div')`

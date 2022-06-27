@@ -10,7 +10,7 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: 'blue'}}
+      style={{ ...style, display: "block"}}
       onClick={onClick}
     />
   );
@@ -21,39 +21,37 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: 'blue' }}
+      style={{ ...style, display: "block" }}
       onClick={onClick}
     />
   );
 }
 
-export default class SlickSlider extends Component {
-  constructor(props){
-    super();
-    this.state = {
-      data: props.data
-    }
-  }
-  render() {
-    // console.log("state:",this.state.data);
-    const settings = {
-      dots: true,
-      infinite: false,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      nextArrow: <SampleNextArrow className="nextArrow"/>,
-      prevArrow: <SamplePrevArrow className="previousArrow"/>
-    };
-    return (
-      <div  className="sliderContiner">
-        <Slider {...settings}>
-            {this.state.data.map(
-              item =>
-              <ProductItem item={item}/>
-            )}
+export default function SlickSlider (props) {
+  const [slidesToShow, setSlidesToShow] = React.useState(Math.trunc(window.innerWidth / 290));
 
-        </Slider>
-      </div>
-    );
-  }
+  const width = () => {return window.addEventListener('resize', function(event){
+    setSlidesToShow(Math.trunc(window.innerWidth / 290))
+  })}
+  width();
+  const settings = {
+    dots: true,
+    infinite: false,
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow className="nextArrow"/>,
+    prevArrow: <SamplePrevArrow className="previousArrow"/>
+  };
+  
+  return (
+    <div  className="sliderContiner">
+      <Slider {...settings}>
+          {!!props.data && props.data.length > 0 && props.data.map(
+            item =>
+            <ProductItem key={item._id} item={item}/>
+          )}
+
+      </Slider>
+    </div>
+  );
 }

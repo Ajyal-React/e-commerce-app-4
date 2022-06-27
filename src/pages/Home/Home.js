@@ -9,7 +9,10 @@ import {
 } from "react-router-dom";
 import { useDispatch } from "react-redux"
 import { UserStateSelector } from '../../redux/user/user.selectors';
+import Loader from '../../components/Loader/Loader';
+import { LoadingSelector } from '../../redux/products/products.selectors';
 function Home() {
+  const isLoading = LoadingSelector();
   const navigate = useNavigate();
   const userData = UserStateSelector();
 

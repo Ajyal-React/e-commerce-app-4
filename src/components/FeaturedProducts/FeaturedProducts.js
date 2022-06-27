@@ -2,13 +2,15 @@ import axios from 'axios';
 import React from 'react'
 import { FullWidthContainer, SectionsMainParagraph, FullWidthSection, SecondaryContainer, SectionsMainTitle } from '../../global.style'
 import SlickSlider from './SlickSlider/SlickSlider';
-import { useSelector, useDispatch } from "react-redux";
-import { FeaturedProductsStateSelector } from '../../redux/home/home.selectors';
-import { GetFeaturedProducts } from '../../redux/home/home.actions';
+import { useDispatch } from "react-redux";
+import { FeaturedProductsSelector } from '../../redux/products/products.selectors';
+import { GetFeaturedProducts } from '../../redux/products/products.actions';
 
 function FeaturedProducts() {
   const dispatch = useDispatch();
-  const data = FeaturedProductsStateSelector();
+  const data = FeaturedProductsSelector();
+  console.log("data:", data);
+
   React.useEffect(() => {
     dispatch(GetFeaturedProducts());
   }, [])
@@ -24,7 +26,7 @@ function FeaturedProducts() {
           <SectionsMainTitle>
             FEATURED PRODUCTS
           </SectionsMainTitle>
-          {data.length > 0 && <SlickSlider data={data}></SlickSlider>}
+          {!!data && !data?.error?.isError && <SlickSlider data={data.data}></SlickSlider>}
         </SecondaryContainer>
     </FullWidthSection>
   )
