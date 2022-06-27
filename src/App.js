@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './pages/Home/Home';
 // import Login from './pages/Login/Login';
+import Signup from './pages/Auth/Signup/Signup';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -27,8 +28,8 @@ function App() {
           <Route index element={<LoginComponent/>}></Route>
           <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>
           <Route path='Login' element={<LoginComponent/>}></Route>
-          <Route path='Signup' element={<SignupComponent/>}></Route>
         </Route>
+        <Route path='/sign-up' element={<Signup/>}></Route>
       </Routes>
     </Router>
   );

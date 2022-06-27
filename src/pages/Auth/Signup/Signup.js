@@ -2,6 +2,8 @@ import React from 'react'
 import "../../../App.css"
 
 import { Formik,useFormik } from 'formik';
+import {useSelector,useDispatch} from 'react-redux'
+import {signup} from '../../../Redux/Signup/signup.action'
 
 
 
@@ -19,6 +21,8 @@ import {CustomImg, InsideContainer, AuthTitle, AuthParagraph, Article} from '../
 import axios from "axios";
 
 function Signup() {
+    const ddtaStore = useSelector(store => store)
+    const dispatch = useDispatch()
 
 
     return (
@@ -48,8 +52,9 @@ function Signup() {
 
                     <Formik
                         initialValues={{ email: '', password: '' ,confirmPassword:''}}
-                        onSubmit={() => {
-                            // axios.post("",va)
+                        onSubmit={(values)=>{
+                            dispatch(signup(values))
+                            console.log(values)
                         }
                         }
                     >

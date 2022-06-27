@@ -1,22 +1,19 @@
 import React,{useEffect} from 'react'
 import axios from "axios";
 import {Container,TitleArea,ImageItem,ItemsArea,Item,NameAndPrice,TexT,Price} from "./TrendingProducts.style";
-
+import {useSelector,useDispatch} from "react-redux"
+import {TrendingProductAction} from "../../Redux/Product/TrendingProduct.action";
 
 function TrendingProducts(){
 
     const [state,setState] = React.useState([]);
+    const storeProducts = useSelector(store => store.ProductReducer.products)
+    const dispatch = useDispatch()
 
-    const getProduct = async () =>  {
-        const res = await axios.get("https://omar-tech-store.herokuapp.com/api/products/trending-products");
-        setState(res.data)
-    }
 
-    useEffect(() => {
-         getProduct();
-        return () => {
-            console.log("This will be logged on unmount");
-        }
+    useEffect( () => {
+        dispatch(TrendingProductAction())
+        setState([...storeProducts?.values()])
     },[]);
 
     return (
@@ -26,7 +23,7 @@ function TrendingProducts(){
                <h1>TRENDING THIS WEEK</h1>
            </TitleArea>
            <ItemsArea>
-               { state.map( (item,index) => {
+               { state?.map( (item,index) => {
 
                    return (
                    <Item>
