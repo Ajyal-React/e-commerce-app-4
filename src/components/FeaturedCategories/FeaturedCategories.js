@@ -1,14 +1,19 @@
 import { FeaturedCat ,CategoriContainer, CategoriNav, CategoriList, CategoriListLink, CategoriListButton,
-  MobileSec , ItemsCat , CatagoriItem , ItemImage , Itemtitel ,ItemName , ItemPrice,SliderCatagori,CatagoriItemSlider,
-  Sliderimage}
+  MobileSec , ItemsCat , CatagoriItem , ItemImage , Itemtitel ,ItemName , ItemPrice,SliderCatagori,CatagoriItemSlider}
  from './FeaturedCategories.style';
  
 import React from 'react';
 import {Image} from "./../../global.style";
-/*import Diamond from '/images/Group 14850.png';*/
+// import Diamond from './imagesCaregories/Group 14849.png';
+import SimpleImageSlider from "react-simple-image-slider";
+const images = [
+  { url: "https://image-us.samsung.com/us/smartphones/galaxy-s22-ultra/images/gallery/B0-PhantomBlack/FLRC-214-B0-PhantomBlack-01-PDP-GALLERY-1600x1200.jpg?$product-details-jpg$" },
+  { url: "https://image-us.samsung.com/us/smartphones/galaxy-s22-ultra/images/gallery/B0-PhantomBlack/FLRC-214-B0-PhantomBlack-01-PDP-GALLERY-1600x1200.jpg?$product-details-jpg$" },
 
+];
 
 function FeaturedCategories() {
+
   return (
     <FeaturedCat>
       <CategoriContainer>
@@ -64,7 +69,7 @@ function FeaturedCategories() {
 
           <SliderCatagori>
             <CatagoriItemSlider>
-            <Image  src="./images/mobile.png" width="100%" height="90%"></Image>
+            <SimpleImageSlider width={450} height={504} images={images} showBullets={true} showNavs={true} />
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
