@@ -3,7 +3,7 @@ import { AxiosGetData, AxiosPostData } from "./axios.service";
 export const GetRequestHandler = async (endPoint, params={}) => {
     try {
         const response = await AxiosGetData(endPoint,params);
-        return { data: response.data, error: { isError: false, errorMessage: "" } };
+        return { data: response.data[0], error: { isError: false, errorMessage: "" } };
     } catch (error) {
         const errorMsg = (error?.response?.data?.message) || error.message || error.toString();
         return { isError: true, errorMessage: errorMsg };

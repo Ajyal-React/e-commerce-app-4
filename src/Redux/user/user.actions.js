@@ -47,7 +47,7 @@ export const SignUp =  (data) => {
        }catch (error){
         //    console.log("action response",error);
             dispatch({
-               type:USER_ACTION_TYPES.USER_SIGNUP_FAILED,
+               type: USER_ACTION_TYPES.USER_SIGNUP_FAILED,
                payload: error.res.data
            })
        }

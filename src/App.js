@@ -14,7 +14,6 @@ import {
 } from "react-router-dom";
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
-import SignupComponent from './components/SignupComponent/SignupComponent';
 import { UserStateSelector } from './redux/user/user.selectors';
 
 function App() {

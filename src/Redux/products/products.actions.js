@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as productsService from "../../services/products.service";
 import PRODUCTS_ACTIONS_TYPES from "./products.actions.types";
 
@@ -17,7 +16,7 @@ export const GetOffers = () => {
 export const GetOffersSuccess = (response) => {
     return({
         type: PRODUCTS_ACTIONS_TYPES.GET_OFFERS_SUCCESS,
-        payload: response.data[0]
+        payload: response
     })
 }
 
@@ -45,19 +44,14 @@ export const GetFeaturedProducts = () => {
 export const GetFeaturedProductsSuccess = (response) => {
     return ({
         type: PRODUCTS_ACTIONS_TYPES.GET_FEATURED_PRODUCTS_SUCCESS,
-        payload: {
-            data: response?.data,
-            error: response?.error
-        }
+        payload: response,
     })
 }
 
 export const GetFeaturedProductsFailed = (error) => {
     return ({
         type: PRODUCTS_ACTIONS_TYPES.GET_FEATURED_PRODUCTS_FAILED,
-        payload: {
-            error: error,
-        },
+        payload: error,
     })
 }
 
@@ -83,7 +77,7 @@ export const GetTrendingProducts = () => {
 export const GetTrendingProductsSuccess = (response) => {
     return({
         type: PRODUCTS_ACTIONS_TYPES.GET_TRENDING_PRODUCTS_SUCCESS,
-        payload: response.data,
+        payload: response,
     })
 }
 

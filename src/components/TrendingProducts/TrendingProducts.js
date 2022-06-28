@@ -23,7 +23,7 @@ function TrendingProducts(){
                <h1>TRENDING THIS WEEK</h1>
            </TitleArea>
            <ItemsArea>
-               { trendingProducts?.map( (item,index) => {
+               { trendingProducts?.data?.map( (item,index) => {
 
                    return (
                    <Item>
