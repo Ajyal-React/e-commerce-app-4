@@ -3,7 +3,7 @@ import "../../../App.css"
 
 import { Formik,useFormik } from 'formik';
 import {useSelector,useDispatch} from 'react-redux'
-import {signup} from '../../../Redux/Signup/signup.action'
+import {SignUp} from '../../../redux/user/user.actions'
 
 
 
@@ -53,7 +53,7 @@ function Signup() {
                     <Formik
                         initialValues={{ email: '', password: '' ,confirmPassword:''}}
                         onSubmit={(values)=>{
-                            dispatch(signup(values))
+                            dispatch(SignUp(values))
                             console.log(values)
                         }
                         }

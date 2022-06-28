@@ -2,17 +2,18 @@ import React,{useEffect} from 'react'
 import axios from "axios";
 import {Container,TitleArea,ImageItem,ItemsArea,Item,NameAndPrice,TexT,Price} from "./TrendingProducts.style";
 import {useSelector,useDispatch} from "react-redux"
-import {TrendingProductAction} from "../../Redux/Product/TrendingProduct.action";
+import { GetTrendingProducts } from '../../services/products.service';
+import { TrendingProductsSelector } from '../../redux/products/products.selectors';
 
 function TrendingProducts(){
 
-    const storeProducts = useSelector(store => store?.ProductReducer?.products);
+    const trendingProducts = TrendingProductsSelector();
     const dispatch = useDispatch();
-    console.log("storeProducts:",storeProducts);
+    console.log("storeProducts:",trendingProducts);
 
 
     useEffect( () => {
-        dispatch(TrendingProductAction())
+        dispatch(GetTrendingProducts())
     },[]);
 
     return (
@@ -22,7 +23,7 @@ function TrendingProducts(){
                <h1>TRENDING THIS WEEK</h1>
            </TitleArea>
            <ItemsArea>
-               { storeProducts?.map( (item,index) => {
+               { trendingProducts?.map( (item,index) => {
 
                    return (
                    <Item>

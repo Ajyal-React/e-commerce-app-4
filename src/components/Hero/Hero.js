@@ -1,30 +1,32 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { AbsoluteContainer, FlexContainerCol, SecondaryContainer, Title1 } from '../../global.style'
 import { StartShoppingBtn } from '../../pages/Home/Home.style'
 import { ContentContainer, HeroContainer, HeroContent, HeroParagraph, HeroTitle } from './Hero.style'
 import {useSelector,useDispatch} from "react-redux"
-import {OfferAction} from "../../Redux/Product/Offers.action"
+import { GetOffers } from '../../services/products.service'
+import { OffersSelector } from '../../redux/products/products.selectors'
 
 function Hero() {
-    const storeOffers = useSelector(store => store.ProductReducer.offers[0])
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const offersData = OffersSelector();
 
-    useEffect(() => {
-        dispatch(OfferAction())
-    },[])
 
-    console.log(storeOffers)
+  React.useEffect(() => {
+    dispatch(GetOffers());
+  }, [])
+
+    console.log(offersData)
 
   return (
-    <HeroContainer image={storeOffers?.imageBanner}>
+    <HeroContainer image={offersData?.imageBanner}>
       <HeroContent>
         <AbsoluteContainer width="24.1rem">
           <article>
              <HeroTitle>
-                 {storeOffers?.name}
+                 {offersData?.name}
             </HeroTitle>
             <HeroParagraph>
-                {storeOffers?.description}
+                {offersData?.description}
             </HeroParagraph>
           </article>
           <StartShoppingBtn>
