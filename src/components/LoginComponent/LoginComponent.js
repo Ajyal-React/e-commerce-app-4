@@ -9,6 +9,9 @@ import { UserStateSelector } from "../../redux/user/user.selectors";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+import { BiLogInCircle } from "react-icons/bi";
+
+
 
 function LoginComponent(){
     const navigate = useNavigate();
@@ -74,7 +77,7 @@ function LoginComponent(){
                                 </div>
                                 <button className="btnLogin" type="submit" onClick={handleSubmit}>
                                     <text>Login</text>
-                                    <div className="icon"></div>
+                                    <BiLogInCircle className="icon"/>
                                 </button>
                             </div>
                         </>

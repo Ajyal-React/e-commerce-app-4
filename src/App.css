@@ -189,10 +189,11 @@ a.active, a.active > li{
 }
 
 .icon{
-  width:100px;
+  width: 22px;
   height: 100%;
-  background: #efa15c;
+  background: var(--main-color);
   border-radius: 50%;
   color: #fff;
+  opacity: 1;
 }
 
