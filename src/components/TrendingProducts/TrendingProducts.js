@@ -6,14 +6,13 @@ import {TrendingProductAction} from "../../Redux/Product/TrendingProduct.action"
 
 function TrendingProducts(){
 
-    const [state,setState] = React.useState([]);
-    const storeProducts = useSelector(store => store.ProductReducer.products)
-    const dispatch = useDispatch()
+    const storeProducts = useSelector(store => store?.ProductReducer?.products);
+    const dispatch = useDispatch();
+    console.log("storeProducts:",storeProducts);
 
 
     useEffect( () => {
         dispatch(TrendingProductAction())
-        setState([...storeProducts?.values()])
     },[]);
 
     return (
@@ -23,7 +22,7 @@ function TrendingProducts(){
                <h1>TRENDING THIS WEEK</h1>
            </TitleArea>
            <ItemsArea>
-               { state?.map( (item,index) => {
+               { storeProducts?.map( (item,index) => {
 
                    return (
                    <Item>

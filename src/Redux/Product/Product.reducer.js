@@ -1,6 +1,6 @@
 import {PRODUCTTYPE} from "./PRODUCTTYPE";
 
-export const ProductReducer = (state= {products:{},offers:{}}
+export const ProductReducer = (state= {products:[],offers:{}}
     ,action) => {
     switch (action.type){
         case PRODUCTTYPE.OFFERPRODUCT_SUCCSS:
