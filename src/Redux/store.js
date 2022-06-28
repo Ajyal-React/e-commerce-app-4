@@ -1,15 +1,17 @@
-import {combineReducers, createStore,applyMiddleware} from 'redux';
-import {signupReducer} from './Signup/signup.reducer'
-import thunk from 'redux-thunk'
-import {ProductReducer} from "./Product/Product.reducer";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import rootReducers, { initialStore } from "./reducers";
+import ReduxPromise from "redux-promise";
 
-const middleware = [thunk]
-const rootReducer = combineReducers({
-    ProductReducer,signupReducer
-})
-const store = createStore(
-    rootReducer,
-    applyMiddleware(thunk)
-)
+const middleWare = [thunk];
 
-export default store;
+const Store = createStore(
+    rootReducers,
+    initialStore,
+    composeWithDevTools(
+        applyMiddleware(...middleWare,ReduxPromise)
+    )
+);
+
+export default Store;

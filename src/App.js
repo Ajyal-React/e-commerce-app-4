@@ -15,21 +15,21 @@ import {
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import SignupComponent from './components/SignupComponent/SignupComponent';
+import { UserStateSelector } from './redux/user/user.selectors';
+
 function App() {
-  // please don't remove this comment
-  // useHistory.push("/home");
+  const userData = UserStateSelector();
 
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Navigate to="/Home" />}/>
+        <Route exact path="/" element={<Navigate to={!!userData?"/Home":"/Auth"} />}/>
         <Route path='Home' element={<Home/>} />
         <Route path='Auth' element={<Auth/>}>
-          <Route index element={<LoginComponent/>}></Route>
           <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>
           <Route path='Login' element={<LoginComponent/>}></Route>
+          <Route path='Signup' element={<Signup/>}></Route>
         </Route>
-        <Route path='/sign-up' element={<Signup/>}></Route>
       </Routes>
     </Router>
   );
