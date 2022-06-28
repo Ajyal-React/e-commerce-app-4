@@ -2,7 +2,7 @@ import USER_ACTION_TYPES from "./userActionsTypes.constant";
 
 export const UserReducerEnum = "User";
 
-export const UserReducer = (state=null, action) => {
+export const UserReducer = (state={data:{}}, action) => {
     switch(action.type){
         case USER_ACTION_TYPES.USER_LOGIN_SUCCESS:
             return action.payload;

@@ -51,6 +51,7 @@ export const ProductsReducer = (state=initialState, action) => {
         //reloading
         case PRODUCTS_ACTIONS_TYPES.RELOADING:
             return state = {...state, isLoading: true};
+
         default:
             return state;
     }

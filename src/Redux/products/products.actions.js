@@ -1,5 +1,5 @@
 import * as productsService from "../../services/products.service";
-import PRODUCTS_ACTIONS_TYPES from "./products.actions.types";
+import PRODUCTS_ACTIONS_TYPES from "./products.actions.types.js";
 
 export const GetOffers = () => {
     return async (dispatch) => {

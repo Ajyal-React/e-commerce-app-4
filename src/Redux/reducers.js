@@ -4,7 +4,7 @@ import { ProductsReducer, ProductsReducerEnum } from "./products/products.reduce
 import { UserReducer, UserReducerEnum } from "./user/user.reducer";
 
 export const initialStore = {
-    [`${UserReducerEnum}`]: JSON.parse(localStorage.getItem('User')),
+    [`${UserReducerEnum}`]: {data: {...JSON.parse(localStorage.getItem('User'))}},
     // [`${ProductsReducerEnum}`]: {},
 };
 
