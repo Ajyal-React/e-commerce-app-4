@@ -3,15 +3,23 @@ import { combineReducers } from "redux";
 import { ProductsReducer, ProductsReducerEnum } from "./products/products.reducers";
 import { UserReducer, UserReducerEnum } from "./user/user.reducer";
 
-export const initialStore = {
-    [`${UserReducerEnum}`]: {data: {...JSON.parse(localStorage.getItem('User'))}},
-    // [`${ProductsReducerEnum}`]: {},
+const UserInitialState = {
+    data: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {},
+    token: localStorage.getItem('token') && localStorage.getItem('token'),
+    isSuccess: false,
+    errorMessage: "",
+    isLoading: false
 };
+
+export const initialStore = {
+    User: {...UserInitialState},
+};
+
 
 const rootReducers = combineReducers(
     {
-        [`${UserReducerEnum}`] : UserReducer,
-        [`${ProductsReducerEnum}`]: ProductsReducer,
+        User : UserReducer,
+        Products: ProductsReducer,
     }
 );
 
