@@ -15,6 +15,8 @@ import {
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -31,7 +33,7 @@ function App() {
         </Routes>
       </Router>
 
-      {/* <ToastContainer
+      <ToastContainer
         position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -41,7 +43,7 @@ function App() {
         draggable
         pauseOnHover
         bodyStyle={{fontSize: '10px'}}
-      /> */}
+      />
     </>
   );
 }
