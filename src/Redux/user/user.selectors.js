@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux";
-import { UserReducerEnum } from "./user.reducer";
 
 export function UserStateSelector (){
-    return useSelector(state => state[UserReducerEnum]);
+    return useSelector(state => state?.User?.data);
+}
+    
+export function TokenSelector (){
+    return useSelector(state => state?.User?.token);
 }
 
-export function AuthorizationSelector (){
-    return useSelector(state => `Bearer ${state[UserReducerEnum]?.token}`);
+export function AutherizationSelector (){
+    return useSelector(state => `Bearer ${state?.User?.token}`);
 }

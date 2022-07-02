@@ -2,8 +2,8 @@ import React,{useEffect} from 'react'
 import axios from "axios";
 import {Container,TitleArea,ImageItem,ItemsArea,Item,NameAndPrice,TexT,Price} from "./TrendingProducts.style";
 import {useSelector,useDispatch} from "react-redux"
-import { GetTrendingProducts } from '../../services/products.service';
 import { TrendingProductsSelector } from '../../redux/products/products.selectors';
+import { GetTrendingProducts } from '../../redux/products/products.actions';
 
 function TrendingProducts(){
 
@@ -23,10 +23,10 @@ function TrendingProducts(){
                <h1>TRENDING THIS WEEK</h1>
            </TitleArea>
            <ItemsArea>
-               { trendingProducts?.map( (item,index) => {
+               { trendingProducts?.data?.map( (item,index) => {
 
                    return (
-                   <Item>
+                   <Item key={index}>
                        <div>
                            <ImageItem src={item.images}/>
                        </div>

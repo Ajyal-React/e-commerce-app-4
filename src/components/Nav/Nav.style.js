@@ -27,6 +27,11 @@ export const SignBtn = styled(MainButton)`
     color: var(--main-color);
 `
 
+export const SignOutBtn = styled(SignBtn)`
+    background: #ff1818db;
+    color: #fff;
+`
+
 export const SearchIcon = styled(Icon)`
     background: transparent url('img/search.png') 0% 0% no-repeat padding-box;
 `

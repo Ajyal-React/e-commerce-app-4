@@ -1,19 +1,17 @@
 import { useSelector } from "react-redux";
-import { ProductsReducerEnum } from "./products.reducers";
-
 
 export function FeaturedProductsSelector (){
-    return useSelector(state => state[ProductsReducerEnum]?.featuredProducts);
+    return useSelector(state => state?.Products?.featuredProducts);
 }
 
 export function OffersSelector (){
-    return useSelector(state => state[ProductsReducerEnum]?.offers);
+    return useSelector(state => state?.Products?.offers);
 }
 
 export function LoadingSelector (){
-    return useSelector(state => state[ProductsReducerEnum]?.isLoading);
+    return useSelector(state => state?.Products?.isLoading);
 }
 
 export function TrendingProductsSelector (){
-    return useSelector(state => state[ProductsReducerEnum]?.trendingProducts);
+    return useSelector(state => state?.Products?.trendingProducts);
 }

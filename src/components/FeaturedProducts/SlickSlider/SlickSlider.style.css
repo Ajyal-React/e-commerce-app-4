@@ -1,0 +1,67 @@
+.slick-next:before {
+    content: '\276F';
+
+    transform: matrix(0, 1, -1, 0, 0, 0);
+}
+.slick-next {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    height: 2.4rem;
+    width: 1.3rem;
+    position: absolute;
+    padding: 0.63rem 0.5rem;
+    right: -7%;
+}
+
+.slick-prev:before {
+    content: '\276E';
+    color: white;
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    transform: matrix(0, 1, -1, 0, 0, 0);
+}
+
+.slick-prev {
+    position: absolute;
+    left: -9%;
+    height: 2.4rem;
+    width: 1.3rem;
+    padding: 0.63rem 0.2rem 0 0;
+    border-radius: 0px 100% 100% 0px / 0px 50% 50% 0px;
+}
+
+.slick-arrow{
+    background: var(--main-color) !important;
+    text-align: center;
+}
+
+ul.slick-dots > li.slick-active > button {
+    background: transparent linear-gradient(180deg, #FA7400 0%, #7D3A00 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 0.30000001192092896px solid #AFAFAF;
+    border-radius: 25px;
+    width: 100%;
+}
+
+ul.slick-dots > li.slick-active {
+    width: 2.2rem;
+}
+
+ul.slick-dots > li > button::before {
+    content: "";
+}
+
+ul.slick-dots > li {
+    width: 0.5rem;
+    height: 8px !important;
+
+}
+
+ul.slick-dots > li > button{
+    height: 8px !important;
+    background: #fff;
+    border: 0.30000001192092896px solid #AFAFAF;
+    border-radius: 30px;
+    width: 100%;
+}

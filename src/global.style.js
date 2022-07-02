@@ -40,7 +40,15 @@ export const Title1 = styled.h1`
 
 export const Title2 = styled.h2`
     transform: Uppercase;
-    color: #000
+    color: #000;
+`;
+
+export const SectionsMainTitle = styled.h2`
+    font: normal normal 600 21.1px/39.5px Poppins;
+    letter-spacing: -1.011px;
+    color: #111111;
+    transform: Uppercase;
+
 `;
 
 
@@ -60,6 +68,14 @@ export const SecondaryContainer = styled('div')`
     box-sizing: border-box;
 `
 
+export const FullWidthContainer = styled(Container)`
+    width: 100%;
+`
+export const FullWidthSection = styled(Container)`
+    width: 100%;
+    box-sizing: border-box;
+`
+
 export const InsideContainer = styled(SecondaryContainer)`
     width: auto;
     margin: 0;
@@ -71,11 +87,11 @@ export const InsideContainer = styled(SecondaryContainer)`
 
 export const FlexContainer = styled('div')`
     width: 100%;
-  max-width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: ${props => props.justify?props.justify: "space-between"};
     height: ${props => props.height?props.height:"100%"};
-  flex-wrap: wrap;
+    flex-wrap: ${props => props.wrap? props.wrap: 'wrap'};
     gap: ${props => props.gap? props.gap: '22px'};
     box-sizing: border-box;
   
@@ -100,15 +116,13 @@ export const CenterFlexCol = styled('div')`
 `
 
 export const FormFlexCol = styled.form`
-  display: flex;
-  align-items:${props => props.alignItems? props.alignItems: 'center'};
-  justify-content: center;
+    display: flex;
+    align-items:${props => props.alignItems? props.alignItems: 'center'};
+    justify-content: center;
     flex-direction: column;
-  gap: 20px;
-  width:${props => props.width? props.width: '100%'};
+    gap: 20px;
+    width:${props => props.width? props.width: '100%'};
 `
-
-
 export const FlexBox = styled(FlexContainer)`
     width: ${props => props.width};
     display: flex;
@@ -124,6 +138,12 @@ export const Paragraph = styled('p')`
     font-size: var(--main-font-size);
     color: ${props => props.color? props.color:"#fff"};
     text-transform: lowercase;
+`
+
+export const SectionsMainParagraph = styled(Paragraph)`
+    font: normal normal normal 10px/15px Poppins;
+    letter-spacing: -0.21px;
+    color: #302F2F;
 `
 
 export const CustomList = styled('ol')`

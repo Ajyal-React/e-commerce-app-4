@@ -85,7 +85,7 @@ function Signup() {
                                     </div>
                                     <button className="btnLogin">
                                         <text>Login</text>
-                                        <div className="icon">-></div>
+                                        <div className="icon">{"->"}</div>
                                     </button>
                                 </div>
                             </FormFlexCol>

@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { ErrorSpan } from "./LoginComponent.style";
 import { Login } from "../../redux/user/user.actions"
 import { useDispatch, useSelector } from "react-redux"
-import { UserStateSelector } from "../../redux/user/user.selectors";
+import { TokenSelector } from "../../redux/user/user.selectors";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -16,12 +16,13 @@ import { BiLogInCircle } from "react-icons/bi";
 function LoginComponent(){
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const userData = UserStateSelector();
+    const userToken = TokenSelector();
     useEffect(() => {
-        if(!!userData){
+        if(!!userToken){
             navigate('/Home');
         }
-    }, [userData])
+    }, [userToken])
+    
     const schema = yup.object().shape({
         password: yup.string().required('Password is required!').min(8,'Too Short!'),
         email: yup.string().email().required('email is required!').min(6,'Too Short!'),
