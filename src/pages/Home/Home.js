@@ -5,6 +5,7 @@ import Hero from '../../components/Hero/Hero';
 import Nav from '../../components/Nav/Nav';
 import { Container, MainButton } from '../../global.style';
 import TrendingProducts from "../../components/TrendingProducts/TrendingProducts";
+import FooterComponent from '../../components/FooterComponent/FooterComponent'
 
 
 function Home() {
@@ -16,7 +17,9 @@ function Home() {
        <FeaturedCategories/>
       {/* <FeaturedProducts/> */}
         <TrendingProducts />
+        <FooterComponent/>
     </Container>
+    
   )
 }
 

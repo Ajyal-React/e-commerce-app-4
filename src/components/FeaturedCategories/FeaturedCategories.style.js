@@ -16,6 +16,7 @@ export const CategoriNav = styled('div')`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom:20px;
     border-bottom: 1px solid #504f4f;
 `
 export const CategoriList = styled('li')`
@@ -28,7 +29,7 @@ export const CategoriListLink = styled('a')`
     text-decoration: none;
     color: #504f4f;
 `
-export const CategoriListButton = styled('button')`
+export const CategoriActiveListLink = styled('a')`
     background-color: #FA7400;
     border: none;
     color: white;
@@ -62,11 +63,11 @@ export const ItemImage = styled('Image')`
 width: 100%;
 `
 export const Itemtitel = styled('div')`
+padding-top:20px;
 display: flex;
 justify-content: space-between;
 width: 80%;
 margin: 0 auto;
-margin-bottom: 36px;
 border-bottom: 2px solid #9c9191;
 `
 export const ItemName = styled('p')`
@@ -93,7 +94,14 @@ export const Sliderimage = styled('Image')`
 width: 100%;
 
 `
-
+export const ItemsFooter = styled('div')`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+padding: 20px 0;
+width: 80%;
+margin: 0 auto;
+`
 
 
 

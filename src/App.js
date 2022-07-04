@@ -14,6 +14,8 @@ import {
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import SignupComponent from './components/SignupComponent/SignupComponent';
+import Payment from './pages/Payment/Payment'
+import MyCart from './pages/MyCart/MyCart';
 function App() {
   // please don't remove this comment
   // useHistory.push("/home");
@@ -23,6 +25,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Navigate to="/Home" />}/>
         <Route path='Home' element={<Home/>} />
+        <Route path='Payment' element={<Payment/>}/>
+        <Route path='MyCart' element={<MyCart/>}/>
         <Route path='Auth' element={<Auth/>}>
           <Route index element={<LoginComponent/>}></Route>
           <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>

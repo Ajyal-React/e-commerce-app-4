@@ -1,17 +1,19 @@
-import { FeaturedCat ,CategoriContainer, CategoriNav, CategoriList, CategoriListLink, CategoriListButton,
-  MobileSec , ItemsCat , CatagoriItem , ItemImage , Itemtitel ,ItemName , ItemPrice,SliderCatagori,CatagoriItemSlider}
+import { FeaturedCat ,CategoriContainer, CategoriNav, CategoriList, CategoriListLink, CategoriActiveListLink,
+  MobileSec , ItemsCat , CatagoriItem , ItemImage , Itemtitel ,ItemName , ItemPrice,SliderCatagori,CatagoriItemSlider,ItemsFooter}
  from './FeaturedCategories.style';
- 
+ import { BsFillStarFill ,BsFillCartCheckFill} from "react-icons/bs";
 import React from 'react';
-import {Image} from "./../../global.style";
-// import Diamond from './imagesCaregories/Group 14849.png';
 import SimpleImageSlider from "react-simple-image-slider";
+import {Image} from "./../../global.style";
+import '../Icon.css'
+// import Diamond from './imagesCaregories/Group 14849.png';
 const images = [
-  { url: "https://image-us.samsung.com/us/smartphones/galaxy-s22-ultra/images/gallery/B0-PhantomBlack/FLRC-214-B0-PhantomBlack-01-PDP-GALLERY-1600x1200.jpg?$product-details-jpg$" },
-  { url: "https://image-us.samsung.com/us/smartphones/galaxy-s22-ultra/images/gallery/B0-PhantomBlack/FLRC-214-B0-PhantomBlack-01-PDP-GALLERY-1600x1200.jpg?$product-details-jpg$" },
-
+  { url: "./images/Mask Group 28.png" },
+  { url: "./images/Group 14849.png"},
+  { url: "./images/Group 14849.png" },
+  { url: "./images/Group 14849.png" },
+  { url: "./images/Group 14849.png" }
 ];
-
 function FeaturedCategories() {
 
   return (
@@ -19,10 +21,10 @@ function FeaturedCategories() {
       <CategoriContainer>
         <CategoriNav>
           <div>
-          <Image height="80px" src="./images/Group 14849.png"></Image>
+          <Image height="50px" width="200px" src="./images/Group 14849.png"></Image>
           </div>
           <ul>
-            <CategoriList> <CategoriListButton>MOBILES</CategoriListButton> </CategoriList>
+            <CategoriList> <CategoriActiveListLink>MOBILES</CategoriActiveListLink> </CategoriList>
             <CategoriList> <CategoriListLink>LAPTOPS</CategoriListLink> </CategoriList>
             <CategoriList> <CategoriListLink>PLAYSTATIONS</CategoriListLink> </CategoriList>
             <CategoriList> <CategoriListLink>IPADS</CategoriListLink> </CategoriList>
@@ -34,35 +36,83 @@ function FeaturedCategories() {
         <MobileSec>
           <ItemsCat>
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
 
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
 
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
 
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
             
           </ItemsCat>
@@ -70,10 +120,23 @@ function FeaturedCategories() {
           <SliderCatagori>
             <CatagoriItemSlider>
             <SimpleImageSlider width={450} height={504} images={images} showBullets={true} showNavs={true} />
+              {/* <Image  src="./images/mobile.png" width="100%" height="80%"></Image> */}
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItemSlider>
           </SliderCatagori>
         </MobileSec>
