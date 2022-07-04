@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './pages/Home/Home';
 // import Login from './pages/Login/Login';
+import Signup from './pages/Auth/Signup/Signup';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -13,15 +14,14 @@ import {
 } from "react-router-dom";
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
-import SignupComponent from './components/SignupComponent/SignupComponent';
-import Signup from "./pages/Auth/Signup/Signup";
-import Product from "./pages/Product/Product";
-function App() {
-  // please don't remove this comment
-  // useHistory.push("/home");
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+function App() {
   return (
-    <Router>
+    <>
+ <Router>
       <Routes>
         <Route exact path="/" element={<Navigate to="/Home" />}/>
         <Route path='Home' element={<Home/>} />
@@ -34,6 +34,19 @@ function App() {
         <Route path="product" element={<Product></Product>}></Route>
       </Routes>
     </Router>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        bodyStyle={{fontSize: '10px'}}
+      />
+    </>
   );
 }
 
