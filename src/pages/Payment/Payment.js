@@ -9,6 +9,7 @@ import { BsFillCreditCard2BackFill } from "react-icons/bs";
 import {Image} from "./../../global.style";
 import { PaymentContainer, ReturnBackeButton,PaymentType ,PaymentMethod,PaymentInput,PaymentPageContent,Samarry,SamarryContent,
   PaymentPageButton,GoBackButton,CheckoutButton,PaymentMethodDiv} from './Payment.style'
+import { NavLink } from 'react-router-dom'
 
 export default function Payment() {
   return (
@@ -92,7 +93,7 @@ export default function Payment() {
           <hr/>
           <br/>
           <PaymentPageButton>
-            <GoBackButton>Go Back</GoBackButton>
+            <GoBackButton><NavLink to='/MyCart' className='GoBack'>Go Back</NavLink></GoBackButton>
             <CheckoutButton>Checkout</CheckoutButton>
           </PaymentPageButton>
 

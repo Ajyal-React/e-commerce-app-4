@@ -116,3 +116,7 @@ body {
 -webkit-box-shadow: 0px 14px 8px -3px rgba(191,183,183,0.61);
 -moz-box-shadow: 0px 14px 8px -3px rgba(191,183,183,0.61);
   }
+.GoBack{
+  color: white;
+  text-decoration: none;
+}
