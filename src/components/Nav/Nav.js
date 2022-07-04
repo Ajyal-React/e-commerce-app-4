@@ -1,11 +1,22 @@
 import React from 'react'
 import { FlexContainerItemsCenter, CustomListItem, InsideContainer, CustomList, SecondaryContainer, CenterFlex, Image } from '../../global.style'
-import { LangSelect, MainNav, SearchIcon, SignBtn, CustomNavList, CustomNavLink } from './Nav.style'
+import { LangSelect, MainNav, SearchIcon, SignBtn, CustomNavList, CustomNavLink, SignOutBtn } from './Nav.style'
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { TokenSelector } from '../../redux/user/user.selectors';
+import { useDispatch } from 'react-redux';
+import { Logout } from '../../redux/user/user.actions';
 
 function Nav() {
-  const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"])
+  const [naveMenu, setNavMenu] = React.useState(["Home","NewArrival","Mobiles", "","Laptops","Headphones","Accessories"]);
+  const userToken = TokenSelector();
+
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    console.log("logout")
+    dispatch(Logout());
+  }
   return (
     <MainNav width="100vw" padding="1.5rem 0">
       <SecondaryContainer width="90%">
@@ -44,11 +55,19 @@ function Nav() {
           </CustomList>
           <InsideContainer width="100px">
             {/* <button style={{background: '#fff'}}>Sign In</button> */}
-            <Link to="/Signup">
-              <SignBtn>
-                Sign In
-              </SignBtn>
-            </Link>
+            {/* <Link to="/sign-up"> */}
+            {!userToken ?
+              <Link to="/Auth/Login">
+                <SignBtn>
+                  Sign In
+                </SignBtn>
+              </Link>
+              :
+              <SignOutBtn onClick={() => signOut()}>
+                Sign out
+              </SignOutBtn>
+            }
+            {/* </Link> */}
           </InsideContainer>
         </FlexContainerItemsCenter>
       </SecondaryContainer>
