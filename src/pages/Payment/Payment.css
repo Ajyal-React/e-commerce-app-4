@@ -101,3 +101,18 @@ body {
       margin-bottom: 20px;
     }
   }
+  /*/******/
+  .visa{
+      margin:15px;
+  }
+  .PaymentMethodDivActive{
+    background-color: #EBEFF0;
+  }
+  .green{
+    color: #0EA965;
+  }
+  .inputCreditInfo{
+    box-shadow: 0px 14px 8px -3px rgba(191,183,183,0.61);
+-webkit-box-shadow: 0px 14px 8px -3px rgba(191,183,183,0.61);
+-moz-box-shadow: 0px 14px 8px -3px rgba(191,183,183,0.61);
+  }

@@ -17,9 +17,14 @@ padding: 20px;
 
 `
 export const PaymentMethod = styled('div')`
+margin:20px 0;
 width: 600px;
 border: 1px solid #e8e8e8;
-padding-bottom:20px;
+`
+export const PaymentMethodDiv = styled('div')`
+display:flex;
+justify-content: space-between;
+flex-wrap: wrap;
 `
 export const PaymentInput = styled('input')`
 margin-right: 10px;
@@ -31,7 +36,8 @@ justify-content: space-between;
 flex-wrap: wrap;
 `
 export const Samarry = styled('div')`
-width:40%;
+width:500px;
+margin-top:50px;
 padding: 20px;
 border: 1px solid #e8e8e8;
 min-height:200px;
@@ -50,16 +56,22 @@ justify-content: space-between;
 flex-wrap: wrap;
 `
 export const GoBackButton = styled('button')`
-padding: 15px ;
+padding: 10px ;
+width:150px;
 background-color:#333;
 color:white;
-border:none
+border:none;
+border-radius: 10px;
+font-size: 15px;
 `
 export const CheckoutButton = styled('button')`
-padding: 15px ;
+padding: 10px ;
+width:150px;
 background-color:#FA7400;
 color:white;
-border:none
+border:none;
+border-radius: 10px;
+font-size: 15px;
 `
 
 
