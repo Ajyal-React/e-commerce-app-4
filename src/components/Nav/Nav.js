@@ -44,7 +44,7 @@ function Nav() {
           </CustomList>
           <InsideContainer width="100px">
             {/* <button style={{background: '#fff'}}>Sign In</button> */}
-            <Link to="/sign-up">
+            <Link to="/Signup">
               <SignBtn>
                 Sign In
               </SignBtn>

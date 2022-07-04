@@ -14,6 +14,8 @@ import {
 import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import SignupComponent from './components/SignupComponent/SignupComponent';
+import Signup from "./pages/Auth/Signup/Signup";
+import Product from "./pages/Product/Product";
 function App() {
   // please don't remove this comment
   // useHistory.push("/home");
@@ -26,9 +28,10 @@ function App() {
         <Route path='Auth' element={<Auth/>}>
           <Route index element={<LoginComponent/>}></Route>
           <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>
-          <Route path='Login' element={<LoginComponent/>}></Route>
-          <Route path='Signup' element={<SignupComponent/>}></Route>
         </Route>
+        <Route path='Login' element={<LoginComponent/>}></Route>
+        <Route path='Signup' element={<Signup/>}></Route>
+        <Route path="product" element={<Product></Product>}></Route>
       </Routes>
     </Router>
   );
