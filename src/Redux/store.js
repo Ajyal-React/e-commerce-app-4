@@ -1,12 +1,17 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import CategoriesReducer from "./Reducers/FeaturedCategoriReducer";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-const middleware = [thunk];
+import rootReducers, { initialStore } from "./reducers";
+import ReduxPromise from "redux-promise";
 
-const allReducer = combineReducers({
-    CategoriesReducer: CategoriesReducer
-});
+const middleWare = [thunk];
 
-const store = createStore(allReducer, {}, applyMiddleware(...middleware));
+const Store = createStore(
+    rootReducers,
+    initialStore,
+    composeWithDevTools(
+        applyMiddleware(...middleWare,ReduxPromise)
+    )
+);
 
-export default store;
+export default Store;
