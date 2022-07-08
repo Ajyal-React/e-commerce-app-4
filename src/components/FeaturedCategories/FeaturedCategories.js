@@ -1,23 +1,30 @@
-import { FeaturedCat ,CategoriContainer, CategoriNav, CategoriList, CategoriListLink, CategoriListButton,
-  MobileSec , ItemsCat , CatagoriItem , ItemImage , Itemtitel ,ItemName , ItemPrice,SliderCatagori,CatagoriItemSlider,
-  Sliderimage}
+import { FeaturedCat ,CategoriContainer, CategoriNav, CategoriList, CategoriListLink, CategoriActiveListLink,
+  MobileSec , ItemsCat , CatagoriItem , ItemImage , Itemtitel ,ItemName , ItemPrice,SliderCatagori,CatagoriItemSlider,ItemsFooter}
  from './FeaturedCategories.style';
- 
+ import { BsFillStarFill ,BsFillCartCheckFill} from "react-icons/bs";
 import React from 'react';
+import SimpleImageSlider from "react-simple-image-slider";
 import {Image} from "./../../global.style";
-/*import Diamond from '/images/Group 14850.png';*/
-
-
+import '../Icon.css'
+// import Diamond from './imagesCaregories/Group 14849.png';
+const images = [
+  { url: "./images/Mask Group 28.png" },
+  { url: "./images/Group 14849.png"},
+  { url: "./images/Group 14849.png" },
+  { url: "./images/Group 14849.png" },
+  { url: "./images/Group 14849.png" }
+];
 function FeaturedCategories() {
+
   return (
     <FeaturedCat>
       <CategoriContainer>
         <CategoriNav>
           <div>
-          <Image height="80px" src="./images/Group 14849.png"></Image>
+          <Image height="50px" width="200px" src="./images/Group 14849.png"></Image>
           </div>
           <ul>
-            <CategoriList> <CategoriListButton>MOBILES</CategoriListButton> </CategoriList>
+            <CategoriList> <CategoriActiveListLink>MOBILES</CategoriActiveListLink> </CategoriList>
             <CategoriList> <CategoriListLink>LAPTOPS</CategoriListLink> </CategoriList>
             <CategoriList> <CategoriListLink>PLAYSTATIONS</CategoriListLink> </CategoriList>
             <CategoriList> <CategoriListLink>IPADS</CategoriListLink> </CategoriList>
@@ -29,46 +36,107 @@ function FeaturedCategories() {
         <MobileSec>
           <ItemsCat>
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
 
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
 
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
 
             <CatagoriItem>
-            <Image  src="./images/mobile.png" width="100%"></Image>
+            <Image  src="./images/mobile.png" width="100%" height="200px"></Image>
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItem>
             
           </ItemsCat>
 
           <SliderCatagori>
             <CatagoriItemSlider>
-            <Image  src="./images/mobile.png" width="100%" height="90%"></Image>
+            <SimpleImageSlider width={450} height={504} images={images} showBullets={true} showNavs={true} />
+              {/* <Image  src="./images/mobile.png" width="100%" height="80%"></Image> */}
               <Itemtitel>
                 <ItemName>Dell Laptop</ItemName>
                 <ItemPrice>99$</ItemPrice>
               </Itemtitel>
+              <ItemsFooter>
+                <div>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                  <BsFillStarFill className='BsFillStarFill'/>
+                </div>
+                <div>
+                  <BsFillCartCheckFill className='BsFillCartCheckFill'/>
+                </div>
+              </ItemsFooter>
             </CatagoriItemSlider>
           </SliderCatagori>
         </MobileSec>

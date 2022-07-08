@@ -1,0 +1,1 @@
+export const FEATURED_CAT = "FEATURED_CAT";
