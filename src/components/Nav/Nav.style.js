@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {CustomList, CustomListItem, CustomButton, Icon, Nav, Select, MainButton} from "./../../global.style";
 import { Link, NavLink } from "react-router-dom";
 export const MainNav = styled(Nav)`
-    position: fixed;
+  position: fixed;
+  
     background: #e7e4e4 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #d9d6d6;
     opacity: 0.8;
