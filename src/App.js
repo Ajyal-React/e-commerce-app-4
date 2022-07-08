@@ -20,35 +20,31 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <>
- <Router>
-      <Routes>
-        <Route exact path="/" element={<Navigate to="/Home" />}/>
-        <Route path='Home' element={<Home/>} />
-        <Route path='Payment' element={<Payment/>}/>
-        <Route path='MyCart' element={<MyCart/>}/>
-        <Route path='Auth' element={<Auth/>}>
-          <Route index element={<LoginComponent/>}></Route>
-          <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>
-        </Route>
-        <Route path='Login' element={<LoginComponent/>}></Route>
-        <Route path='Signup' element={<Signup/>}></Route>
-        <Route path="product" element={<Product></Product>}></Route>
-      </Routes>
-    </Router>
+      <>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Navigate to="/Home" />}/>
+            <Route path='Home' element={<Home/>} />
+            <Route path='Auth' element={<Auth/>}>
+              <Route exact path="/Auth" element={<Navigate to="/Auth/Login" />}/>
+              <Route path='Login' element={<LoginComponent/>}></Route>
+              <Route path='Signup' element={<Signup/>}></Route>
+            </Route>
+          </Routes>
+        </Router>
 
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        bodyStyle={{fontSize: '10px'}}
-      />
-    </>
+        <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            bodyStyle={{fontSize: '10px'}}
+        />
+      </>
   );
 }
 
