@@ -13,4 +13,5 @@ const Store = createStore(
         applyMiddleware(...middleWare,ReduxPromise)
     )
 );
+
 export default Store;
