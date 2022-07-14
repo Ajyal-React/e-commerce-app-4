@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TokenSelector } from "../redux/user/user.selectors";
+import { TokenSelector } from "../Redux/user/user.selectors";
 
 const BaseUrl = "https://omar-tech-store.herokuapp.com/api";
 

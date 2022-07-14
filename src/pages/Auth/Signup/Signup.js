@@ -3,7 +3,7 @@ import "../../../App.css"
 
 import { Formik,useFormik } from 'formik';
 import {useSelector,useDispatch} from 'react-redux'
-import {SignUp} from '../../../redux/user/user.actions'
+import {SignUp} from '../../../Redux/user/user.actions'
 
 
 

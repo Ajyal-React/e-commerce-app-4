@@ -16,6 +16,8 @@ import Auth from './pages/Auth/Auth';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Product from "./pages/Product/Product";
+import Profile from "./pages/Profile/Profile";
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
               <Route path='Login' element={<LoginComponent/>}></Route>
               <Route path='Signup' element={<Signup/>}></Route>
             </Route>
+            <Route path="product" element={<Product/>}></Route>
+            <Route path="profile" element={<Profile/>}></Route>
           </Routes>
         </Router>
 

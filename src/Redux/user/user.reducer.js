@@ -12,6 +12,8 @@ const initialState = {
 
 export const UserReducer = (state=initialState, action) => {
     switch(action.type){
+        case USER_ACTION_TYPES.USER_LOGIN_START:
+            return state = {...state, data: action.payload, token: action?.payload?.token, isSuccess: false, errorMessage: "", isLoading: true};
         case USER_ACTION_TYPES.USER_LOGIN_SUCCESS:
             return state = {...state, data: action.payload, token: action?.payload?.token, isSuccess: true, errorMessage: "", isLoading: false};
 

@@ -3,9 +3,9 @@ import { MainButton, SecondaryContainer } from "../../global.style";
 
 import * as yup from 'yup';
 import { ErrorSpan } from "./LoginComponent.style";
-import { Login } from "../../redux/user/user.actions"
+import { Login } from "../../Redux/user/user.actions"
 import { useDispatch, useSelector } from "react-redux"
-import { TokenSelector } from "../../redux/user/user.selectors";
+import { TokenSelector } from "../../Redux/user/user.selectors";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 

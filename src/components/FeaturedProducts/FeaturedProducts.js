@@ -3,8 +3,8 @@ import React from 'react'
 import { FullWidthContainer, SectionsMainParagraph, FullWidthSection, SecondaryContainer, SectionsMainTitle } from '../../global.style'
 import SlickSlider from './SlickSlider/SlickSlider';
 import { useDispatch } from "react-redux";
-import { FeaturedProductsSelector } from '../../redux/products/products.selectors';
-import { GetFeaturedProducts } from '../../redux/products/products.actions';
+import { FeaturedProductsSelector } from '../../Redux/products/products.selectors';
+import { GetFeaturedProducts } from '../../Redux/products/products.actions';
 
 function FeaturedProducts() {
   const dispatch = useDispatch();

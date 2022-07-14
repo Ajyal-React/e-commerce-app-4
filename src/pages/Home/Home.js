@@ -8,7 +8,8 @@ import TrendingProducts from "../../components/TrendingProducts/TrendingProducts
 import {
   useNavigate
 } from "react-router-dom";
-import { UserStateSelector } from '../../redux/user/user.selectors';
+import { UserStateSelector } from '../../Redux/user/user.selectors';
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ function Home() {
       <FeaturedCategories/>
       <FeaturedProducts/>
       <TrendingProducts />
+        <FooterComponent />
     </Container>
   )
 }

@@ -1,21 +1,35 @@
 import styled from "styled-components";
 
 export const ContainerProduct = styled.div `
+  @media (min-width: 960px) {
     width: 100vw;
-  display: flex;
-  height: 100vh;
-  min-height: 100%;
-  justify-content: start;
-  align-items: center;
-  gap: 10%;
-  padding-left:10% ;
+    display: flex;
+    height: 100vh;
+    min-height: 100%;
+    justify-content: start;
+    align-items: center;
+    gap: 10%;
+    padding-left: 10% ;
+  }
+  @media (max-width: 968px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    
+  }
   //padding:15% 0 10% 0;
   
 `
 
 export const ImagesDiv = styled.div `
-    width: 40%;
   display: flex;
+  @media(min-width: 960px) {
+    width: 40%;
+  }
+  @media(max-width: 960px) {
+    width: 100%;
+  }
   flex-direction: column;
   gap: 20px;
 

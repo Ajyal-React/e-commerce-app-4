@@ -2,16 +2,15 @@ import React,{useEffect} from 'react'
 import axios from "axios";
 import {Container,TitleArea,ImageItem,ItemsArea,Item,NameAndPrice,TexT,Price} from "./TrendingProducts.style";
 import {useSelector,useDispatch} from "react-redux"
-import { TrendingProductsSelector } from '../../redux/products/products.selectors';
-import { GetTrendingProducts } from '../../redux/products/products.actions';
+import { TrendingProductsSelector } from '../../Redux/products/products.selectors';
+import { GetTrendingProducts } from '../../Redux/products/products.actions';
+import {Link} from 'react-router-dom'
 
 function TrendingProducts(){
 
     const trendingProducts = TrendingProductsSelector();
     const dispatch = useDispatch();
     console.log("storeProducts:",trendingProducts);
-
-
     useEffect( () => {
         dispatch(GetTrendingProducts())
     },[]);
@@ -31,7 +30,7 @@ function TrendingProducts(){
                            <ImageItem src={item.images}/>
                        </div>
                        <NameAndPrice>
-                           <TexT>{item.name}</TexT>
+                           <Link to={"/product"}> <TexT>{item.name}</TexT></Link>
                            <Price>
                                <TexT>${item.price}</TexT>
                            </Price>

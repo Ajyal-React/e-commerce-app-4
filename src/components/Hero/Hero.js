@@ -3,8 +3,8 @@ import { AbsoluteContainer, FlexContainerCol, SecondaryContainer, Title1 } from 
 import { StartShoppingBtn } from '../../pages/Home/Home.style'
 import { ContentContainer, HeroContainer, HeroContent, HeroParagraph, HeroTitle } from './Hero.style'
 import { useSelector,useDispatch } from "react-redux"
-import { GetOffers } from '../../redux/products/products.actions'
-import { OffersSelector } from '../../redux/products/products.selectors';
+import { GetOffers } from '../../Redux/products/products.actions'
+import { OffersSelector } from '../../Redux/products/products.selectors';
 
 function Hero() {
   const dispatch = useDispatch();
